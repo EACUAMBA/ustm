@@ -12,7 +12,7 @@ Var
    // Seção de Declarações das variáveis
    temas: vetor[1..5] de caractere
    velho_testamento_1, velho_testamento_2, novo_testamento: vetor[1..10] de caractere
-   contador, tema, palavra, opcao: inteiro
+   contador, tema, palavra, opcao_menu: inteiro
 
 procedimento iniciando()
 var
@@ -20,13 +20,14 @@ inicio
    Escreval("Inciando o Jogo...")
    carregando_palavras()
    escolhendo_tema_palavra()
-   menu()
+   opcao_menu <- menu()
 
 fimprocedimento
 
-procedimento menu()
+funcao menu():inteiro
 var
-teste: logico
+teste_1, teste_2, teste: logico
+opcao:inteiro
 inicio
    opcao <- 0
    Escreval()
@@ -38,15 +39,19 @@ inicio
 
       Leia(opcao)
       
-      teste <- ((opcao <= 0) e (opcao < 5))
-      se teste entao
+      teste_1 <- (opcao > 0)
+      teste_2 <- (opcao < 5)
+      teste <-  teste_1 e teste_2
+      se nao teste entao
          limpatela
          Escreval()
          escreval("Insira um valor que consta na lista!")
       fimse
-   ate opcao <5 e opcao > 0
+   ate teste
    limpatela
-fimprocedimento
+   escreva("Voce escolheu: " + numpcarac(opcao))
+   retorne opcao
+fimfuncao
 
 procedimento escolhendo_tema_palavra()
 inicio
