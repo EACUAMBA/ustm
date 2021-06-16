@@ -5,12 +5,17 @@ Algoritmo "Trabalho - Jogo Da Forca - Cuamba e Zavala - 1P1LDS1"
 // Autor(a)    : Edilson Alexandre Cuamba - 2021101069
 // Autor(a)    : Edilson Zavala
 // Data atual  : 6/14/2021
+tipo
 
+jogador = registro
+nickname: caracter
+vitorias, derrotas, desistencias: inteiro
+fimregistro
 
 
 Var
    // Seção de Declarações das variáveis
-   temas: vetor[1..5] de caractere
+   jogadores: vetor[1..5] de jogador
    velho_testamento_1, velho_testamento_2, novo_testamento: vetor[1..10] de caractere
    contador, tema, palavra, opcao_menu: inteiro
 
@@ -20,9 +25,24 @@ inicio
    Escreval("Inciando o Jogo...")
    carregando_palavras()
    escolhendo_tema_palavra()
+   repita
    opcao_menu <- menu()
-
+   escolha opcao_menu
+   caso 1
+   escreval("Escolheste Jogar")
+   
+   fimescolha
+   ate opcao_menu = 4
+   fechando()
 fimprocedimento
+
+
+
+funcao preparar_jogo()
+inicio
+
+
+fimfuncao
 
 funcao menu():inteiro
 var
