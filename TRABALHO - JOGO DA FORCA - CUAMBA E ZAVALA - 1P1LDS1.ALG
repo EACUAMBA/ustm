@@ -7,10 +7,10 @@ Algoritmo "Trabalho - Jogo Da Forca - Cuamba e Zavala - 1P1LDS1"
 // Data atual  : 6/14/2021
 tipo
 
-jogador = registro
-nickname: caracter
-vitorias, derrotas, desistencias: inteiro
-fimregistro
+   jogador = registro
+      nickname: caracter
+      vitorias, derrotas, desistencias: inteiro
+   fimregistro
 
 
 Var
@@ -26,12 +26,12 @@ inicio
    carregando_palavras()
    escolhendo_tema_palavra()
    repita
-   opcao_menu <- menu()
-   escolha opcao_menu
-   caso 1
-   escreval("Escolheste Jogar")
-   
-   fimescolha
+      opcao_menu <- menu()
+      escolha opcao_menu
+      caso 1
+         escreval("Escolheste Jogar")
+
+      fimescolha
    ate opcao_menu = 4
    fechando()
 fimprocedimento
@@ -46,8 +46,8 @@ fimfuncao
 
 funcao menu():inteiro
 var
-teste_1, teste_2, teste: logico
-opcao:inteiro
+   teste_1, teste_2, teste: logico
+   opcao:inteiro
 inicio
    opcao <- 0
    Escreval()
@@ -58,7 +58,7 @@ inicio
       escreval("4 - Sair")
 
       Leia(opcao)
-      
+
       teste_1 <- (opcao > 0)
       teste_2 <- (opcao < 5)
       teste <-  teste_1 e teste_2
