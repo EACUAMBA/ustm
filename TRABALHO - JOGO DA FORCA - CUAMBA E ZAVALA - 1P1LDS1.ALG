@@ -9,7 +9,7 @@ tipo
 
    jogador = registro
       nickname: caracter
-      vitorias, derrotas, desistencias: inteiro
+      vitorias, derrotas, desistencias, identificador: inteiro
    fimregistro
 
 
@@ -17,7 +17,7 @@ Var
    // Seção de Declarações das variáveis
    jogadores: vetor[1..5] de jogador
    velho_testamento_1, velho_testamento_2, novo_testamento: vetor[1..10] de caractere
-   contador, tema, palavra, opcao_menu: inteiro
+   contador, tema, palavra, opcao_menu, jogador_jogando_actual_id: inteiro
 
 procedimento iniciando()
 var
@@ -29,20 +29,29 @@ inicio
       opcao_menu <- menu()
       escolha opcao_menu
       caso 1
-         escreval("Escolheste Jogar")
-
+          preparando_jogo()
+      caso 2
+         escreval("Escolheste Ver estatisticas")
+      caso 3
+         escreval("Escolheste Sobre Nós")
       fimescolha
    ate opcao_menu = 4
    fechando()
 fimprocedimento
 
-
-
-funcao preparar_jogo()
+procedimento preparando_jogo()
 inicio
+escreval()
+escreval("Escolheste Jogar")
+jogador_jogando_actual_id <- 0
+//Listar jogadores registrados
+//Permitir o jogador selecionar um jogador que ja foi usado
+//permitir o jogador adicionar novo utilizador
+//depois iniciar o jogo
+desenha_pessoa_1()
 
 
-fimfuncao
+fimprocedimento
 
 funcao menu():inteiro
 var
@@ -135,6 +144,118 @@ inicio
    novo_testamento[9] <- "Zacarias"
    novo_testamento[10] <- "Eclesiastes"
 fimprocedimento
+
+procedimento desenha_pessoa_3()
+var
+inicio
+escreval()
+escreval()
+
+escreval("    . .        _______")
+escreval("    . .       |       |")
+escreval("    . .       | 0   0 |")
+escreval("    . .       |   ^   |")
+escreval("    . .       |   ==  |")
+escreval("    . .           ||   ")
+escreval("    . .       *********")
+escreval("    . .   *****************")
+escreval("    . .  | |  |       |  | |")
+escreval("    . .  | |  |       |  | |")
+escreval("    . .  | |  |       |  | |")
+escreval("    . .  | |  |       |  | |")
+escreval("    . .  | |  |       |  | |")
+escreval("    . .   \|  |       |  |/ ")
+escreval("    . .       |       |")
+escreval("    . .	        ")
+escreval("    . .          ")
+escreval("    . .            ")
+escreval("    . .            ")
+escreval("    . .             ")
+escreval("    . .             ")
+escreval("    . .            ")
+escreval("    . .             ")
+escreval("    . .        ")
+escreval("    . .        ")
+escreval()
+escreval()
+fimprocedimento
+
+procedimento desenha_pessoa_2()
+var
+inicio
+escreval()
+escreval()
+escreval("     .        _______")
+escreval("     .       |       |")
+escreval("     .       | 0   0 |")
+escreval("     .       |   ^   |")
+escreval("     .       |   ==  |")
+escreval("     .           ||   ")
+escreval("     .       *********")
+escreval("     .   *****************")
+escreval("     .  | |  |       |  | |")
+escreval("     .  | |  |       |  | |")
+escreval("     .  | |  |       |  | |")
+escreval("     .  | |  |       |  | |")
+escreval("     .  | |  |       |  | |")
+escreval("     .   \|  |       |  |/ ")
+escreval("     .       |       |")
+escreval("     .	    / /     ")
+escreval("     .     / /       ")
+escreval("     .    / /         ")
+escreval("     .   | |           ")
+escreval("     .   | |           ")
+escreval("     .   | |           ")
+escreval("     .   | |           ")
+escreval("     .   | |           ")
+escreval("     .   | |___       ")
+escreval("     .   |_____|       ")
+escreval()
+escreval()
+fimprocedimento
+
+procedimento desenha_pessoa_1()
+var
+inicio
+escreval()
+escreval()
+escreval("     *==============**")
+escreval("     ||             ||")
+escreval("     ||             ||")
+escreval("     ||        ************")
+escreval("     ||       *   _______   *")
+escreval("     ||      *   |       |   *")
+escreval("     ||      *   | 0   0 |   *")
+escreval("     ||      *   |   ^   |   *")
+escreval("     ||      *   |  ===  |   *")
+escreval("     ||      *   |_______|   *")
+escreval("     ||      *       ||      *")
+escreval("     ||        ******||******")
+escreval("     ||              ||")
+escreval("     ||      *****************")
+escreval("     ||     | |  |       |  | |")
+escreval("     ||     | |  |       |  | |")
+escreval("     ||     | |  |       |  | |")
+escreval("     ||     | |  |       |  | |")
+escreval("     ||     | |  |       |  | |")
+escreval("     ||      \|  |       |  |/ ")
+escreval("     ||          |       |")
+
+escreval("     ||         / /     \ \")
+escreval("     ||        / /       \ \")
+escreval("     ||       / /         \ \")
+escreval("     ||      | |           | |")
+escreval("     ||      | |           | |")
+escreval("     ||      | |           | |")
+escreval("     ||      | |           | |")
+escreval("     ||      | |           | |")
+escreval("     ||      | |___        | |___")
+escreval("     ||      |_____|       |_____|")
+escreval("     ||___________________________________________")
+escreval()
+escreval()
+fimprocedimento
+
 
 procedimento fechando()
 inicio
