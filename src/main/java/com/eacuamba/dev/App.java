@@ -12,7 +12,7 @@ public class App
     public static void main( String[] args )
     {
         ApplicationConfig.setDefaults();
-        CLI.loadData();
+        ApplicationConfig.loadData(); // Pre carrega alguns dados para questão de testes.
         CLI.start();
     }
 }
