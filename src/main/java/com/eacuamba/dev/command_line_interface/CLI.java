@@ -3,7 +3,6 @@ package com.eacuamba.dev.command_line_interface;
 import com.eacuamba.dev.command_line_interface.utils.TecladoScannerUtils;
 import com.eacuamba.dev.config.ApplicationConfig;
 import com.eacuamba.dev.domain.exception.ValorInvalidoException;
-import com.eacuamba.dev.domain.exception.ValorNaoEncontradoException;
 import com.eacuamba.dev.domain.model.Localizacao;
 import com.eacuamba.dev.domain.model.Propriedade;
 import com.eacuamba.dev.domain.model.TipoPropriedade;
@@ -51,7 +50,7 @@ public class CLI {
                     break;
                 }
                 case 2: {
-                    ReportsCLI.start();
+                    StatisticCLI.start();
                     break;
                 }
                 case 3: {
