@@ -8,7 +8,7 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Propriedade {
+public class Propriedade implements Comparable<Propriedade> {
     private Long id;
     private TipoPropriedade tipoPropriedade;
     private Localizacao localizacao;
@@ -111,5 +111,10 @@ public class Propriedade {
                 ", desconto=" + desconto +
                 ", valorPago=" + valorPago +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Propriedade o) {
+        return this.getId().compareTo(o.getId());
     }
 }
