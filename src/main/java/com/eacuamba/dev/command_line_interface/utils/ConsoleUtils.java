@@ -1,5 +1,7 @@
 package com.eacuamba.dev.command_line_interface.utils;
 
+import com.diogonunes.jcolor.AnsiFormat;
+import com.diogonunes.jcolor.Attribute;
 import com.eacuamba.dev.config.ApplicationConfig;
 import com.eacuamba.dev.domain.exception.ValorInvalidoException;
 
@@ -10,8 +12,32 @@ import java.text.ParsePosition;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class TecladoScannerUtils {
+public class ConsoleUtils {
     private static Scanner teclado = new Scanner(System.in);
+
+    public static AnsiFormat getConsoleNormalText() {
+        return new AnsiFormat(Attribute.WHITE_TEXT());
+    }
+
+    public static AnsiFormat getConsoleNormalTextBold() {
+        return new AnsiFormat(Attribute.WHITE_TEXT(), Attribute.BOLD());
+    }
+
+    public static AnsiFormat getConsoleErrorText() {
+        return new AnsiFormat(Attribute.RED_TEXT());
+    }
+
+    public static AnsiFormat getConsoleErrorTextBold() {
+        return new AnsiFormat(Attribute.RED_TEXT(), Attribute.BOLD());
+    }
+
+    public static AnsiFormat getConsoleLinkNormalText() {
+        return new AnsiFormat(Attribute.BLUE_TEXT());
+    }
+
+    public static AnsiFormat getConsoleSuccessTextBold() {
+        return new AnsiFormat(Attribute.GREEN_TEXT(), Attribute.BOLD());
+    }
 
     public static int receberValorInteiroDoUtilizador() {
         System.out.print("Resposta: ");
@@ -20,7 +46,7 @@ public class TecladoScannerUtils {
             System.out.println();
             return Integer.parseInt(texto);
         }catch (NumberFormatException numberFormatException){
-            System.out.println(ApplicationConfig.getConsoleErrorTextBold().format("Erro: Ocorreu um erro ao ler o valor que informou."));
+            System.out.println(ConsoleUtils.getConsoleErrorTextBold().format("Erro: Ocorreu um erro ao ler o valor que informou."));
             return -2;
         }
     }
@@ -45,7 +71,7 @@ public class TecladoScannerUtils {
             texto = texto.trim().replace(".", "").replace(",", ".");
             return Double.parseDouble(texto);
         }catch (NumberFormatException | NullPointerException exception){
-            System.out.println(ApplicationConfig.getConsoleErrorTextBold().format("Erro: Ocorreu um erro ao ler o valor que informou."));
+            System.out.println(ConsoleUtils.getConsoleErrorTextBold().format("Erro: Ocorreu um erro ao ler o valor que informou."));
             return -2;
         }
     }
@@ -73,7 +99,7 @@ public class TecladoScannerUtils {
             }
             return texto;
         }catch (ValorInvalidoException valorInvalidoException){
-            System.out.println(ApplicationConfig.getConsoleErrorTextBold().format(valorInvalidoException.getMessage()));
+            System.out.println(ConsoleUtils.getConsoleErrorTextBold().format(valorInvalidoException.getMessage()));
             return null;
         }
     }
