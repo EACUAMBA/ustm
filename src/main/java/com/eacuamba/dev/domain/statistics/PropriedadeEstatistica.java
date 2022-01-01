@@ -64,7 +64,6 @@ public class PropriedadeEstatistica {
         }
 
         localizacaoFacturouMaisList.sort(Comparator.comparing(LocalizacaoFacturouMais::getValorFacturado));
-
         return localizacaoFacturouMaisList;
     }
 
@@ -74,11 +73,9 @@ public class PropriedadeEstatistica {
                 .map((p) -> new PropriedadeEstatisticaDataTable(p, p.getLocalizacao(), p.getTipoPropriedade(), p.getNumeroQuartos(), p.getValor(), p.getDescontoEmMT(), p.getValorPago()))
                 .map(PropriedadeEstatisticaDataTable::getDataRow)
                 .toArray(String[][]::new);
-
     }
 
     public static String[] getRodapeParaTabela(List<Propriedade> propriedadeList) {
-
 
         Double valor = propriedadeList.stream()
                 .map(Propriedade::getValor)
@@ -98,8 +95,6 @@ public class PropriedadeEstatistica {
                 .collect(Collectors.summarizingDouble(Double::doubleValue))
                 .getSum();
 
-
-
         return new String[]
                 {
                         "",
@@ -111,4 +106,10 @@ public class PropriedadeEstatistica {
                         NumberFormat.getCurrencyInstance(Locale.getDefault()).format(valorPago)
                 };
     }
+
+    public static BigDecimal getLucroTendoEmContaDespesas(List<Propriedade> propriedadeList, float percentagemDasDespesas) throws ListaSemDadosException {
+        BigDecimal valorTotalRecebido = getValorTotalRecebido(propriedadeList);
+        return valorTotalRecebido.subtract(valorTotalRecebido.multiply(BigDecimal.valueOf(percentagemDasDespesas)));
+    }
+
 }
