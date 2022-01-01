@@ -1,6 +1,6 @@
 package com.eacuamba.dev.command_line_interface;
 
-import com.eacuamba.dev.command_line_interface.utils.TecladoScannerUtils;
+import com.eacuamba.dev.command_line_interface.utils.ConsoleUtils;
 import com.eacuamba.dev.config.ApplicationConfig;
 import com.eacuamba.dev.domain.exception.ValorInvalidoException;
 import com.eacuamba.dev.domain.model.Localizacao;
@@ -30,7 +30,7 @@ public class CLI {
 
         do {
             imprimeMenu();
-            proximoPasso = TecladoScannerUtils.receberValorInteiroDoUtilizador();
+            proximoPasso = ConsoleUtils.receberValorInteiroDoUtilizador();
 
             switch (proximoPasso) {
                 case -2: {
@@ -58,7 +58,7 @@ public class CLI {
                     break;
                 }
                 default: {
-                    System.out.println(ApplicationConfig.getConsoleErrorTextBold().format("Erro: Valor introduzido não corresponde a nenhuma das opções na lista."));
+                    System.out.println(ConsoleUtils.getConsoleErrorTextBold().format("Erro: Valor introduzido não corresponde a nenhuma das opções na lista."));
                     break;
                 }
             }
@@ -87,12 +87,12 @@ public class CLI {
         boolean numeroQuartosNaoValido = true;
         do {
             System.out.println("Introduza o número de quartos da casa.");
-            int numeroQuartos = TecladoScannerUtils.receberValorInteiroDoUtilizador();
+            int numeroQuartos = ConsoleUtils.receberValorInteiroDoUtilizador();
             try {
                 propriedade.setNumeroQuartos(numeroQuartos);
                 numeroQuartosNaoValido = false;
             } catch (ValorInvalidoException e) {
-                System.out.println(ApplicationConfig.getConsoleErrorTextBold().format(e.getMessage()));
+                System.out.println(ConsoleUtils.getConsoleErrorTextBold().format(e.getMessage()));
                 System.out.println();
             }
         } while (numeroQuartosNaoValido);
@@ -100,12 +100,12 @@ public class CLI {
         boolean valorNaoValidado = true;
         do {
             System.out.println("Introduza o preço da propriedade (O preço que esta na montra)");
-            double valor = TecladoScannerUtils.receberValorDecimalDoUtilizador();
+            double valor = ConsoleUtils.receberValorDecimalDoUtilizador();
             try {
                 propriedade.setValor(BigDecimal.valueOf(valor));
                 valorNaoValidado = false;
             } catch (ValorInvalidoException e) {
-                System.out.println(ApplicationConfig.getConsoleErrorTextBold().format(e.getMessage()));
+                System.out.println(ConsoleUtils.getConsoleErrorTextBold().format(e.getMessage()));
                 System.out.println();
             }
         } while (valorNaoValidado);
@@ -113,15 +113,15 @@ public class CLI {
         boolean decontoNaoValidado = true;
         do {
             System.out.println("Introduza o desconto da propriedade em percentagem (0 - 100, valores inteiros), caso não introduzir o sistema assumira os valores padrão.");
-            int desconto = TecladoScannerUtils.receberValorInteiroDoUtilizadorSemImpressaoErro();
+            int desconto = ConsoleUtils.receberValorInteiroDoUtilizadorSemImpressaoErro();
 
             if (desconto == -2) {
                 desconto = propriedade.getDescontoPadrao();
-                System.out.println(ApplicationConfig.getConsoleErrorTextBold().format("Você introduziu um valor ínvalido ou nenhum valor o sistema vai assumir o valor padrão de desconto."));
-                System.out.println(ApplicationConfig.getConsoleErrorTextBold().format(String.format("Valor de desconto assumido é %s%s.", desconto, "%")));
+                System.out.println(ConsoleUtils.getConsoleErrorTextBold().format("Você introduziu um valor ínvalido ou nenhum valor o sistema vai assumir o valor padrão de desconto."));
+                System.out.println(ConsoleUtils.getConsoleErrorTextBold().format(String.format("Valor de desconto assumido é %s%s.", desconto, "%")));
                 System.out.println();
             } else if (desconto < 0) {
-                System.out.println(ApplicationConfig.getConsoleErrorTextBold().format("Valor do desconto invalido, introduza um valor superior ou igual a 0 \"desconto >= 0\"."));
+                System.out.println(ConsoleUtils.getConsoleErrorTextBold().format("Valor do desconto invalido, introduza um valor superior ou igual a 0 \"desconto >= 0\"."));
                 System.out.println();
                 continue;
             }
@@ -132,7 +132,7 @@ public class CLI {
         boolean valorPagoNaoValidado = true;
         do {
             System.out.println("Introduza o valor que o cliente pagou (o valor que ele depositou na conta da empresa).\nSe não introduzir o sistema vai assumir o preço menos o valor do desconto.");
-            double valor = TecladoScannerUtils.receberValorDecimalDoUtilizadorSemImpressaoErro();
+            double valor = ConsoleUtils.receberValorDecimalDoUtilizadorSemImpressaoErro();
             try {
                 if(valor == -2){
                     valor = propriedade.getValor().subtract(propriedade.getDescontoEmMT()).doubleValue();
@@ -140,7 +140,7 @@ public class CLI {
                 propriedade.setValorPago(BigDecimal.valueOf(valor));
                 valorPagoNaoValidado = false;
             } catch (ValorInvalidoException e) {
-                System.out.println(ApplicationConfig.getConsoleErrorTextBold().format(e.getMessage()));
+                System.out.println(ConsoleUtils.getConsoleErrorTextBold().format(e.getMessage()));
                 System.out.println();
             }
         } while (valorPagoNaoValidado);
@@ -151,12 +151,12 @@ public class CLI {
             if (optionalPropriedade.isPresent()) {
                 propriedade = optionalPropriedade.get();
                 System.out.println("Propriedade: ");
-                System.out.println(ApplicationConfig.getConsoleSuccessTextBold().format(propriedade.imprimir()));
+                System.out.println(ConsoleUtils.getConsoleSuccessTextBold().format(propriedade.imprimir()));
                 System.out.println("Propriedade inserida com sucesso.");
                 System.out.println();
             }
         } catch (ValorInvalidoException e) {
-            System.out.println(ApplicationConfig.getConsoleErrorTextBold().format(e.getMessage()));
+            System.out.println(ConsoleUtils.getConsoleErrorTextBold().format(e.getMessage()));
             System.out.println();
         }
     }
@@ -170,14 +170,14 @@ public class CLI {
             System.out.println("0 - Cancelar Registro");
             System.out.println();
 
-            int valorSelecionado = TecladoScannerUtils.receberValorInteiroDoUtilizador();
+            int valorSelecionado = ConsoleUtils.receberValorInteiroDoUtilizador();
             for (Localizacao localizacao : localizacaoRepositoryFAKE.findAll()) {
                 localizacaoSelecionada = localizacaoRepositoryFAKE.findById((long) valorSelecionado);
             }
             if (valorSelecionado == 0) {
                 naoSelecionado = false;
             } else if (!localizacaoSelecionada.isPresent()) {
-                System.out.println(ApplicationConfig.getConsoleErrorTextBold().format("Erro: Valor introduzido não corresponde a nenhuma das opções na lista."));
+                System.out.println(ConsoleUtils.getConsoleErrorTextBold().format("Erro: Valor introduzido não corresponde a nenhuma das opções na lista."));
             } else {
                 naoSelecionado = false;
             }
@@ -194,7 +194,7 @@ public class CLI {
             System.out.println("0 - Cancelar Registro");
             System.out.println();
 
-            int valorSelecionado = TecladoScannerUtils.receberValorInteiroDoUtilizador();
+            int valorSelecionado = ConsoleUtils.receberValorInteiroDoUtilizador();
             switch (valorSelecionado) {
                 case 0: {
                     naoSelecionado = false;
@@ -213,7 +213,7 @@ public class CLI {
                     break;
                 }
                 default: {
-                    System.out.println(ApplicationConfig.getConsoleErrorTextBold().format("Erro: Valor introduzido não corresponde a nenhuma das opções na lista."));
+                    System.out.println(ConsoleUtils.getConsoleErrorTextBold().format("Erro: Valor introduzido não corresponde a nenhuma das opções na lista."));
                     System.out.println();
                 }
             }
