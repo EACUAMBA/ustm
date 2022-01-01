@@ -50,23 +50,6 @@ public class PropriedadeEstatistica {
         return getValorTotalRecebido(propriedadesDoTipoSelecionado);
     }
 
-    public static List<LocalizacaoFacturouMais> getLocalizacaoFacturouMais(List<Propriedade> propriedadeList, List<Localizacao> localizacaoList) throws ListaSemDadosException {
-        if (propriedadeList == null || propriedadeList.isEmpty()) {
-            throw new ListaSemDadosException("Não temos nenhuma propriedade registada ainda, impossível processar o pedido, por favor registe pelo menos uma propriedade.");
-        }
-        List<LocalizacaoFacturouMais> localizacaoFacturouMaisList = new ArrayList<>();
-        for (Localizacao localizacao : localizacaoList) {
-            double valorTotalFacturado = propriedadeList.stream().filter((p) -> p.getLocalizacao().equals(localizacao)).collect(Collectors.summarizingDouble((p) -> p.getValorPago().doubleValue())).getSum();
-            LocalizacaoFacturouMais localizacaoFacturouMais = new LocalizacaoFacturouMais();
-            localizacaoFacturouMais.setLocalizacao(localizacao);
-            localizacaoFacturouMais.setValorFacturado(BigDecimal.valueOf(valorTotalFacturado));
-            localizacaoFacturouMaisList.add(localizacaoFacturouMais);
-        }
-
-        localizacaoFacturouMaisList.sort(Comparator.comparing(LocalizacaoFacturouMais::getValorFacturado));
-        return localizacaoFacturouMaisList;
-    }
-
     public static String[][] getDadosEmTabela(List<Propriedade> propriedadeList) {
         return propriedadeList.stream()
                 .sorted()
@@ -112,4 +95,61 @@ public class PropriedadeEstatistica {
         return valorTotalRecebido.subtract(valorTotalRecebido.multiply(BigDecimal.valueOf(percentagemDasDespesas)));
     }
 
+    public static List<LocalizacaoFacturouMais> getLocalizacaoFacturouMais(List<Propriedade> propriedadeList, List<Localizacao> localizacaoList) throws ListaSemDadosException {
+        if (propriedadeList == null || propriedadeList.isEmpty()) {
+            throw new ListaSemDadosException("Não temos nenhuma propriedade registada ainda, impossível processar o pedido, por favor registe pelo menos uma propriedade.");
+        }
+        if (localizacaoList == null || localizacaoList.isEmpty()) {
+            throw new ListaSemDadosException("Não temos nenhuma localização registada ainda, impossível processar o pedido, por favor registe pelo menos uma localização.");
+        }
+
+        List<LocalizacaoFacturouMais> localizacaoFacturouMaisList = new ArrayList<>();
+        for (Localizacao localizacao : localizacaoList) {
+            LocalizacaoFacturouMais localizacaoFacturouMais = new LocalizacaoFacturouMais();
+            localizacaoFacturouMais.setLocalizacao(localizacao);
+
+            for (Propriedade propriedade : propriedadeList) {
+                if (propriedade.getLocalizacao().equals(localizacao)) {
+
+                    if (localizacaoFacturouMais.getValorFacturado() == null)
+                        localizacaoFacturouMais.setValorFacturado(propriedade.getValorPago());
+                    else
+                        localizacaoFacturouMais.setValorFacturado(localizacaoFacturouMais.getValorFacturado().add(propriedade.getValorPago()));
+                }
+            }
+            localizacaoFacturouMaisList.add(localizacaoFacturouMais);
+        }
+
+        return localizacaoFacturouMaisList.stream().sorted(new Comparator<LocalizacaoFacturouMais>() {
+            @Override
+            public int compare(LocalizacaoFacturouMais o1, LocalizacaoFacturouMais o2) {
+                return o2.getValorFacturado().compareTo(o1.getValorFacturado());
+            }
+        }).collect(Collectors.toList());
+    }
+
+    public static BigDecimal getTotalRecebidoIncluindoDescontos(List<Propriedade> propriedadeList) throws ListaSemDadosException {
+        if (propriedadeList == null || propriedadeList.isEmpty()) {
+            throw new ListaSemDadosException("Não temos nenhuma propriedade registada ainda, impossível processar o pedido, por favor registe pelo menos uma propriedade.");
+        }
+
+        double valorTotal = propriedadeList.stream()
+                .map(Propriedade::getValor)
+                .mapToDouble(BigDecimal::doubleValue)
+                .sum();
+
+        return BigDecimal.valueOf(valorTotal);
+    }
+
+    public static BigDecimal getValorTotalDescontos(List<Propriedade> propriedadeList) throws ListaSemDadosException {
+        if (propriedadeList == null || propriedadeList.isEmpty()) {
+            throw new ListaSemDadosException("Não temos nenhuma propriedade registada ainda, impossível processar o pedido, por favor registe pelo menos uma propriedade.");
+        }
+
+        BigDecimal valorTotalDescontos = new BigDecimal(0);
+        for (Propriedade propriedade : propriedadeList) {
+            valorTotalDescontos = valorTotalDescontos.add(propriedade.getDescontoEmMT());
+        }
+        return valorTotalDescontos;
+    }
 }
