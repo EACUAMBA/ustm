@@ -2,6 +2,7 @@ package com.eacuamba.dev.config;
 
 import com.diogonunes.jcolor.AnsiFormat;
 import com.diogonunes.jcolor.Attribute;
+import com.eacuamba.dev.command_line_interface.utils.ConsoleUtils;
 import com.eacuamba.dev.domain.exception.ValorNaoEncontradoException;
 import com.eacuamba.dev.domain.model.Propriedade;
 import com.eacuamba.dev.domain.model.TipoPropriedade;
@@ -14,30 +15,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class ApplicationConfig {
-
-    public static AnsiFormat getConsoleNormalText() {
-        return new AnsiFormat(Attribute.WHITE_TEXT());
-    }
-
-    public static AnsiFormat getConsoleNormalTextBold() {
-        return new AnsiFormat(Attribute.WHITE_TEXT(), Attribute.BOLD());
-    }
-
-    public static AnsiFormat getConsoleErrorText() {
-        return new AnsiFormat(Attribute.RED_TEXT());
-    }
-
-    public static AnsiFormat getConsoleErrorTextBold() {
-        return new AnsiFormat(Attribute.RED_TEXT(), Attribute.BOLD());
-    }
-
-    public static AnsiFormat getConsoleLinkNormalText() {
-        return new AnsiFormat(Attribute.BLUE_TEXT());
-    }
-
-    public static AnsiFormat getConsoleSuccessTextBold() {
-        return new AnsiFormat(Attribute.GREEN_TEXT(), Attribute.BOLD());
-    }
 
     public static void setDefaults() {
         Locale.setDefault(new Locale("pt", "MZ"));
@@ -58,7 +35,7 @@ public class ApplicationConfig {
         System.out.println("\nInformações de contacto:");
         System.out.println("\t Telemóvel: (+258) 842 473 772");
         System.out.println("\t Telemóvel: (+258) 822 565 148");
-        System.out.println("\t Email: " + ApplicationConfig.getConsoleLinkNormalText().format("mailto:edilsoncuamba@gmail.com"));
+        System.out.println("\t Email: " + ConsoleUtils.getConsoleLinkNormalText().format("mailto:edilsoncuamba@gmail.com"));
         System.out.println("\t Residência: Marracuene");
         System.out.println("\n** Muito Obrigado **");
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("'Aos' dd 'de' MMMM 'de' yyyy 'as' HH:mm:ss", Locale.getDefault())));
