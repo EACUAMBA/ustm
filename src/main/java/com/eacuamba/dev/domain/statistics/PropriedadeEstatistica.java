@@ -105,27 +105,28 @@ public class PropriedadeEstatistica {
 
         List<LocalizacaoFacturouMais> localizacaoFacturouMaisList = new ArrayList<>();
         for (Localizacao localizacao : localizacaoList) {
-            LocalizacaoFacturouMais localizacaoFacturouMais = new LocalizacaoFacturouMais();
-            localizacaoFacturouMais.setLocalizacao(localizacao);
-
             for (Propriedade propriedade : propriedadeList) {
                 if (propriedade.getLocalizacao().equals(localizacao)) {
-
+                    LocalizacaoFacturouMais localizacaoFacturouMais = new LocalizacaoFacturouMais();
+                    localizacaoFacturouMais.setLocalizacao(localizacao);
                     if (localizacaoFacturouMais.getValorFacturado() == null)
                         localizacaoFacturouMais.setValorFacturado(propriedade.getValorPago());
                     else
                         localizacaoFacturouMais.setValorFacturado(localizacaoFacturouMais.getValorFacturado().add(propriedade.getValorPago()));
+                    localizacaoFacturouMaisList.add(localizacaoFacturouMais);
                 }
             }
-            localizacaoFacturouMaisList.add(localizacaoFacturouMais);
+        }
+        if(propriedadeList.size() > 1){
+            localizacaoFacturouMaisList = localizacaoFacturouMaisList.stream().sorted(new Comparator<LocalizacaoFacturouMais>() {
+                @Override
+                public int compare(LocalizacaoFacturouMais o1, LocalizacaoFacturouMais o2) {
+                    return o2.getValorFacturado().compareTo(o1.getValorFacturado());
+                }
+            }).collect(Collectors.toList());
         }
 
-        return localizacaoFacturouMaisList.stream().sorted(new Comparator<LocalizacaoFacturouMais>() {
-            @Override
-            public int compare(LocalizacaoFacturouMais o1, LocalizacaoFacturouMais o2) {
-                return o2.getValorFacturado().compareTo(o1.getValorFacturado());
-            }
-        }).collect(Collectors.toList());
+        return localizacaoFacturouMaisList;
     }
 
     public static BigDecimal getTotalRecebidoIncluindoDescontos(List<Propriedade> propriedadeList) throws ListaSemDadosException {
