@@ -12,6 +12,6 @@ public class CalculaAreaDoTrapezio extends ConsoleBase {
         BigDecimal altura = getValorNumericoAsBigDecimalFromConsole("Altura");
 
         BigDecimal superficieDoTrapezio = baseMaior.add(baseMenor).multiply(altura).divide(BigDecimal.valueOf(2D), mathContext);
-        output.printf("A superficie do trapézio com valore de base maior %.2f, base menor %.2f e altura %.2f é %.2f", baseMaior, baseMenor, altura, superficieDoTrapezio);
+        output.printf("A superficie do trapézio com valores de base maior %.2f, base menor %.2f e altura %.2f é %.2f", baseMaior, baseMenor, altura, superficieDoTrapezio);
     }
 }
