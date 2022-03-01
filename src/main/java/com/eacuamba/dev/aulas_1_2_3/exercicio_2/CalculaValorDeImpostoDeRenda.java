@@ -2,9 +2,7 @@ package com.eacuamba.dev.aulas_1_2_3.exercicio_2;
 
 import com.eacuamba.dev.utils.ConsoleBase;
 
-import java.io.PrintStream;
 import java.math.BigDecimal;
-import java.util.Scanner;
 
 public class CalculaValorDeImpostoDeRenda extends ConsoleBase {
     public static void main(String[] args) {
