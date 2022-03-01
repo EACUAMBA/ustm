@@ -1,9 +1,8 @@
 package com.eacuamba.dev.aulas_1_2_3.exercicio_4;
 
-import com.eacuamba.dev.utils.ConsoleBase;
-
 import java.math.BigDecimal;
-import java.math.MathContext;
+
+import com.eacuamba.dev.utils.ConsoleBase;
 
 public class DivisaoDoPrimeiroPeloSugundo extends ConsoleBase {
     public static void main(String[] args) {
