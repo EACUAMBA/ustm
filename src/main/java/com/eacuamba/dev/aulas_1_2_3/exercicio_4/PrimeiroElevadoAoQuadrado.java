@@ -8,7 +8,6 @@ public class PrimeiroElevadoAoQuadrado extends ConsoleBase {
     public static void main(String[] args) {
         output.println("O primeiro elevado ao quadrado");
         BigDecimal primeiroValor = getValorNumericoAsBigDecimalFromConsole("Primeiro valor");
-        BigDecimal segundoValor = getValorNumericoAsBigDecimalFromConsole("Segundo valor");
         BigDecimal elevado = primeiroValor.pow(2, mathContext);
         output.printf("O resultado do primeiro %.2f elevado ao quadrado é de %.2f.", primeiroValor, elevado);
     }
