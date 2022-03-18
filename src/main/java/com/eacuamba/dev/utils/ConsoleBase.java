@@ -37,6 +37,22 @@ public abstract class ConsoleBase {
         } while (naoFecharEntradaDeDadosNoTerminal);
         return valor;
     }
+    
+    protected static Double getValorNumericoAsDoubleFromConsole(String campo) {
+        Double valor = null;
+        do {
+            try {
+                output.printf("%s: ", campo);
+                String texto = input.nextLine();
+                valor = Double.parseDouble(texto);
+                naoFecharEntradaDeDadosNoTerminal = false;
+            } catch (NumberFormatException | NullPointerException e) {
+                output.printf("Por favor insira um \"%s\" válido.%n", campo);
+                naoFecharEntradaDeDadosNoTerminal = true;
+            }
+        } while (naoFecharEntradaDeDadosNoTerminal);
+        return valor;
+    }
 
     protected static Integer getValorNumericoAsIntegerFromConsole(String campo) {
         Integer valor = null;
