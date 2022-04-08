@@ -46,7 +46,7 @@ public class Somatorios extends ConsoleBase {
 		int linhaMaiorSomatorioIndice = -1;
 		
 		for(int linha = 0; linha < valores.length; linha++) {
-			if(somatorioDosElementosPorLinha[linha] <\               linhaMaiorSomatorioValor) {
+			if(somatorioDosElementosPorLinha[linha] > linhaMaiorSomatorioValor) {
 				linhaMaiorSomatorioValor = somatorioDosElementosPorLinha[linha];
 				linhaMaiorSomatorioIndice = linha;
 			}
