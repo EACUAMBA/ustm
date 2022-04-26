@@ -16,17 +16,29 @@ public class CalculadoraService {
             tokens.add(stringTokenizer.nextToken());
         }
 
-        List<String> strings = null;
-        int indexOfMultiply = tokens.indexOf("*");
-        int indexOfDivision = tokens.indexOf("/");
-        if (indexOfMultiply < indexOfDivision)
-            strings = this.resultadoMultiplicacoes(tokens);
-        else
-            strings = this.resultadoDivisao(tokens);
+        List<String> strings = tokens;
+
+
+        int indexOfMultiply = 0;
+        int indexOfDivision = 0;
+        do {
+             indexOfMultiply = strings.indexOf("*");
+             indexOfDivision = strings.indexOf("/");
+
+            if(indexOfDivision <= indexOfMultiply && (indexOfDivision != -1)){
+                strings = this.resultadoDivisao(tokens);
+            }else if (indexOfMultiply <= indexOfDivision && (indexOfMultiply != -1)) {
+                strings = this.resultadoMultiplicacoes(tokens);
+            }else  {
+                strings = this.resultadoMultiplicacoes(tokens);
+                strings = this.resultadoDivisao(tokens);
+            }
+
+            indexOfMultiply = strings.indexOf("*");
+            indexOfDivision = strings.indexOf("/");
+        } while ((indexOfMultiply != -1 || indexOfDivision != -1));
 
         do {
-            strings = this.resultadoMultiplicacoes(strings);
-            strings = this.resultadoDivisao(strings);
             strings = this.resultadoSoma(strings);
             strings = this.resultadoSubtracao(strings);
         } while (strings.size() != 1);
@@ -41,8 +53,6 @@ public class CalculadoraService {
 
     public List<String> resultadoMultiplicacoes(List<String> tokens) {
         Double resultado = 0D;
-        boolean continua = false;
-        do {
             int indexOfMultiply = tokens.indexOf("*");
             if (indexOfMultiply != -1) {
                 String valor1 = tokens.get(indexOfMultiply - 1);
@@ -52,28 +62,15 @@ public class CalculadoraService {
                 tokens.set(indexOfMultiply, resultado.toString());
                 tokens.remove(indexOfMultiply - 1);
                 tokens.remove(indexOfMultiply);
-                try {
-                    indexOfMultiply = tokens.indexOf("*");
-                    if (tokens.get(indexOfMultiply + 1) != null) {
 
-                        continua = true;
-
-                    }
-                } catch (Exception e) {
-
-                }
             } else {
-                continua = false;
             }
-        } while (continua);
 
         return tokens;
     }
 
     public List<String> resultadoDivisao(List<String> tokens) {
         Double resultado = 0D;
-        boolean continua = false;
-        do {
             int indexOfMultiply = tokens.indexOf("/");
             if (indexOfMultiply != -1) {
                 String valor1 = tokens.get(indexOfMultiply - 1);
@@ -83,20 +80,9 @@ public class CalculadoraService {
                 tokens.set(indexOfMultiply, resultado.toString());
                 tokens.remove(indexOfMultiply - 1);
                 tokens.remove(indexOfMultiply);
-                try {
-                    indexOfMultiply = tokens.indexOf("*/");
-                    if (tokens.get(indexOfMultiply + 1) != null) {
 
-                        continua = true;
-
-                    }
-                } catch (Exception e) {
-
-                }
             } else {
-                continua = false;
             }
-        } while (continua);
 
         return tokens;
     }
