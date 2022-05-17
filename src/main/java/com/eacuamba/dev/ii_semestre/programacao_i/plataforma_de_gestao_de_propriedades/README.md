@@ -3,7 +3,7 @@
 ### Um de Janeiro de 2021
 
 Este é um trabalho prático desenvolvido por mim com o intuito de resolver este problema que temos na imagem.
-!["Imagem mostrando o problema que o software resolve."](./src/main/resources/problema.png?raw=true)
+!["Imagem mostrando o problema que o software resolve."](/src/main/resources/problema.png?raw=true)
 
 Como forma de resolver o problema foi feita uma aplicação que roda no CLI (Command Line Interface), como podemos ver um ‘screenshot’ do menu principal.
 !["Imagem mostrando o menu principal."](/src/main/resources/menu-principal.png?raw=true)
