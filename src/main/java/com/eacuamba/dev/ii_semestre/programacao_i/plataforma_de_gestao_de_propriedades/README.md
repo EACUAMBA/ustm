@@ -9,7 +9,7 @@ Como forma de resolver o problema foi feita uma aplicação que roda no CLI (Com
 !["Imagem mostrando o menu principal."](./src/main/resources/menu-principal.png?raw=true)
 
 Este é o menu de estatisticas como forma de organizar melhor o trabalho criei uma classe responsavel por responder aos pedidos relacionados com estatisticas.
-!["Imagem mostrando o menu principal."](./src/main/resources/menu-estatisticas.png?raw=true)
+!["Imagem mostrando o menu principal."](/src/main/resources/menu-estatisticas.png?raw=true)
 
 Processo de registo de uma propriedade.
 Como se pode ver usei uma biblioteca ([JColor](https://github.com/dialex/JColor)) auxiliar para poder imprimir textos coloridos no console.
