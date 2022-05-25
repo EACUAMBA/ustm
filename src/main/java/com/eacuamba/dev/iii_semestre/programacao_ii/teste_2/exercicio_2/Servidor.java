@@ -15,7 +15,6 @@ public class Servidor {
             datagramSocket.receive(datagramPacket);
 
             String s = new String(messageByte);
-
             StringBuilder stringBuilder = new StringBuilder();
             for(char c : s.toCharArray()){
                 if(Character.isUpperCase(c)){
