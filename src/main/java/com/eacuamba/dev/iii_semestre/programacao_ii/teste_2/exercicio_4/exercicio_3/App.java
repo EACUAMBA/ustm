@@ -1,4 +1,4 @@
-package com.eacuamba.dev.iii_semestre.programacao_ii.teste_2.exercicio_3;
+package com.eacuamba.dev.iii_semestre.programacao_ii.teste_2.exercicio_4.exercicio_3;
 
 import javax.swing.*;
 import java.applet.Applet;

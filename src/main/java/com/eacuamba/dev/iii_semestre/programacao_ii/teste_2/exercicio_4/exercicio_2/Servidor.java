@@ -1,4 +1,4 @@
-package com.eacuamba.dev.iii_semestre.programacao_ii.teste_2.exercicio_2;
+package com.eacuamba.dev.iii_semestre.programacao_ii.teste_2.exercicio_4.exercicio_2;
 
 import java.io.IOException;
 import java.net.*;

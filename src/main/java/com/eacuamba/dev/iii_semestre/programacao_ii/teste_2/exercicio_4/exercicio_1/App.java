@@ -1,4 +1,4 @@
-package com.eacuamba.dev.iii_semestre.programacao_ii.teste_2.exercicio_1;
+package com.eacuamba.dev.iii_semestre.programacao_ii.teste_2.exercicio_4.exercicio_1;
 
 import java.util.Scanner;
 
