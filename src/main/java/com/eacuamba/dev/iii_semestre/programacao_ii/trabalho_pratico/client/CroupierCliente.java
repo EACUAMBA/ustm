@@ -105,7 +105,7 @@ public class CroupierCliente extends JFrame {
         setVisible(true);
 
         JMenuBar jMenuBar = new JMenuBar();
-        JMenu jMenu = new JMenu("Acoes");
+        JMenu jMenu = new JMenu("Ações");
         this.cadastrarUtilizadorJMenuItem.setText("Cadastrar-me");
         iniciarJogoJMenuItem.addActionListener(new IniciarJogoEventListener());
         iniciarJogoJMenuItem.setText("Iniciar o jogo!");
@@ -118,7 +118,6 @@ public class CroupierCliente extends JFrame {
         jMenuBar.add(jMenu);
         jMenuBar.add(nomeJogadorJMenu);
         this.setJMenuBar(jMenuBar);
-
 
         mainJPanel.setLayout(new BorderLayout());
         this.add(mainJPanel, BorderLayout.CENTER);
@@ -137,7 +136,6 @@ public class CroupierCliente extends JFrame {
         dividedCenterJPanel.setLayout(new GridLayout(1, 2));
         centerMainJPanel.add(dividedCenterJPanel, BorderLayout.CENTER);
         mainJPanel.add(centerMainJPanel, BorderLayout.CENTER);
-
 
         this.leftDividedCenterJPanel.setLayout(new BorderLayout());
         this.leftDividedCenterJPanel.add(new Label("Cartas Que podem ser distribuidas!"), BorderLayout.NORTH);

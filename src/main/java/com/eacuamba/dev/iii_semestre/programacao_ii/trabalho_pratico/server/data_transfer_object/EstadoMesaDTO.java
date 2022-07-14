@@ -62,6 +62,10 @@ public class EstadoMesaDTO {
     @Builder.Default
     private boolean isRegistarJogador = false;
 
+    @Builder.Default
+    private boolean pediuCarta = false;
+    private JogadorDTO quemPediuCarta;
+
     private ProximaCartaDeveSerNumeroDois proximaCartaDeveSerNumeroDois;
 
     private JogadorDTO jogadorDTO;

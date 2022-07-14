@@ -117,6 +117,9 @@ public class CroupierServer implements Runnable {
                 .build();
 
         sendMessageBack(estadoMesaDTO1.getJSON());
+        Jogador jogadorActual = croupier.getJogadorActual();
+        EstadoMesaDTO.EstadoMesaDTOBuilder dtoBuilder = estadoMesaDTO.toBuilder().pediuCarta(true).quemPediuCarta(estadoMesaDTO.getJogadorDTO()).jogadorDTO(new JogadorDTO(jogadorActual)).mensagem(String.format("Agora é a vez de %s", jogadorActual.getPessoa().getNome()));
+        sendBroadCasting(objectMapper.writeValueAsString(dtoBuilder));
 
     }
 
