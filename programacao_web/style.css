@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+form{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid black;
+    gap: 1rem;
+    width: 500px;
+    padding: 1rem;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    font-weight: bold;
+}
+
+.radio{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+.radio label{
+    display: flex;
+    flex-direction: row;
+}

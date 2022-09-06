@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <link rel="stylesheet" href="./../reset.css" type="text/css" />
+    <link rel="stylesheet" href="./../style.css" type="text/css" />
+</head>
+
+<body>
+    <h1>Cadastro de !?</h1>
+    <form action="">
+        <label>
+            <span>Nome:</span>
+            <input type="text" name="nome">
+        </label>
+
+        <label>
+            <span>Senha:</span>
+            <input type="password" name="nome">
+        </label>
+
+        <textarea name="bio"></textarea>
+
+        <div style="display: flex; gap: 1rem; justify-content: space-around; align-items: center;">
+            <div class="radio">
+                <label>
+                    <span>Admin</span>
+                    <input type="radio" name="tipo" value="admin">
+                </label>
+    
+                <label>
+                    <span>Regular</span>
+                    <input type="radio" name="tipo" value="regular">
+                </label>
+    
+                <label >
+                    <span>Professor</span>
+                    <input type="radio" name="tipo" value="professor">
+                </label>
+            </div>
+    
+            <div class="radio">
+                <label>
+                    <span>Activo</span>
+                    <input type="checkbox" name="Activo" value="admin">
+                </label>
+            </div>
+        </div>
+
+        <select name="provincia" id="provincia">
+            <option value="Selecione" disabled>Selecione</option>
+            <option value="Maputo">Maputo</option>
+            <option value="Sofala">Sofala</option>
+            <option value="Nampula">Nampula</option>
+        </select>
+
+        <select name="interesses" multiple size="7">
+            <option value="Java">Java</option>
+            <option value="JS">JAVASCRIPT</option>
+            <option value="Python">Python</option>
+            <option value="GO">Go</option>
+            <option value="C#">C#</option>
+            <option value="PHP">PHP</option>
+        </select>
+
+        <button formaction="http://localhost:3003/usuarios">Incluir</button>
+        <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
+    </form>
+</body>
+
+</html>

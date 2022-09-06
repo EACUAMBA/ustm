@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-
+scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    /* Style the header */
+
+    header {
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+
+    }
+
+    /* Create two columns/boxes that floats 
+next to each other */
+    nav {
+      float: left;
+      width: 30%;
+      height: 300px;
+      /* only for 
+demonstration, should be removed */
+      background: #ccc;
+      padding: 20px;
+
+    }
+
+    /* Style the list inside the menu */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+
+    }
+
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #f1f1f1;
+      height: 300px;
+      overflow: auto;
+
+      /* only for 
+demonstration, should be removed */
+
+    }
+
+    article>form {
+      float: left;
+    }
+
+    article>form input,
+    article>form textarea,
+    article>form select,
+    article>form div {
+      display: block;
+      margin: 1rem 1rem;
+      padding: .5rem;
+    }
+
+    article>form div {
+      float: left;
+    }
+
+    /* Clear floats after the columns */
+    section::after,
+    article>form>div {
+      content: "";
+      display: table;
+      clear: both;
+
+    }
+
+    /* Style the footer */
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+
+    }
+
+    /* Responsive layout - makes the two columns/boxes 
+stack on top of each other instead of next to each other, 
+on small screens */
+    @media (max-width: 600px) {
+
+      nav,
+      article {
+        width: 100%;
+        height: auto;
+
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <h2>CSS Layout Float</h2>
+  <p>In this example, we have created a header, two
+    columns/boxes and a footer. On smaller screens, the
+    columns will stack on top of each other.</p>
+  <p>Resize the browser window to see the responsive
+    effect (you will learn more about this in our next
+    chapter - HTML Responsive.)</p>
+  <header>
+    <h2>Cities</h2>
+  </header>
+  <section>
+    <nav>
+      <ul>
+        <li><a href="#">London</a></li>
+        <li><a href="#">Paris</a></li>
+        <li><a href="#">Tokyo</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Formulário</h1>
+
+      <form method="POST">
+        <input type="hidden" name="id" value="3">
+        <input type="text" name="nome">
+        <input type="password" name="senha">
+        <textarea name="bio" cols="30" rows="10"></textarea>
+        <div>
+          <input type="radio" name="tipo" value="admin">Admin
+          <input type="radio" name="tipo" value="regular">Regular
+          <input type="radio" name="tipo" value="professor">Professor
+
+        </div>
+        <div>
+          <input type="checkbox" name="ativo"> Ativo
+        </div>
+        <select name="provincias">
+          <option value="">Select</option>
+
+          <option value="Maputo">Maputo</option>
+          <option value="Nampula">Nampula</option>
+          <option value="Sofala">Sofala</option>
+        </select>
+
+        <select name="intereses" multiple size="7">
+          <option value="java">java</option>
+          <option value="js">js</option>
+          <option value="python">python</option>
+          <option value="go">go</option>
+          <option value="C#">C#</option>
+          <option value="PHP">PHP</option>
+        </select>
+        <button formaction="http://localhost:3003/usuarios">Incluir</button>
+        <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
+      </form>
+    </article>
+  </section>
+  <footer>
+    <p>Footer</p>
+  </footer>
+</body>
+
+</html>

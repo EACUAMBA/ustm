@@ -1,0 +1,317 @@
+/*reset*/
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+ul,
+span,
+legend {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-color: #f0f8f9;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin-top: 64px;
+}
+
+header {
+  height: 64px;
+  background-color: #b5ffe1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0.25rem 0.5rem 0.025rem rgba(0, 0, 0, 0.125);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+header h1 {
+  text-align: center;
+  color: #08415c;
+  font-size: 1.5rem;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  grid-template-rows: 1fr;
+}
+
+#main aside {
+}
+
+#main aside nav ul li {
+  list-style: none;
+}
+
+#main aside nav ul li a {
+  display: block;
+  border-radius: 0.5rem;
+  background-color: #b5ffe1;
+  margin: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #08415c;
+}
+
+#main aside nav ul li a:hover {
+  background-color: #96e1cf;
+}
+
+#main aside nav ul li a:active {
+  background-color: #1c424a;
+  color: #ffffff;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1c424a;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/*main*/
+main h2 {
+  font-size: 1.2rem;
+  color: #08415c;
+  text-align: center;
+  margin: 1rem;
+}
+/*form*/
+#form {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+#form > label {
+  font-size: 1rem;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: auto 512px;
+  gap: 0.5rem;
+  justify-content: start;
+  align-items: center;
+}
+
+#form input[type="text"],
+#form input[type="email"],
+#form input[type="password"],
+#form select,
+textarea {
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #08415c;
+  background-color: #ffffff;
+  min-width: 256px;
+}
+
+#form .endereco {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+#form .endereco textarea {
+  resize: vertical;
+}
+
+#form fieldset {
+  border: #08415c 1px solid;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: auto auto 8rem;
+  gap: 0.5rem;
+  justify-content: start;
+  align-items: center;
+  padding: 1rem;
+  place-self: start;
+}
+
+#form fieldset legend {
+  font-weight: 600;
+}
+
+#form button {
+  border: none;
+  display: inline-block;
+  border-radius: 0.5rem;
+  background-color: #b5ffe1;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #08415c;
+  place-self: start;
+}
+
+#form button:hover {
+  background-color: #96e1cf;
+}
+
+#form button:active {
+  background-color: #1c424a;
+  color: #ffffff;
+}
+
+/*Menu*/
+#menu-bar {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #main aside {
+    position: relative;
+  }
+
+  #main aside nav {
+    position: fixed;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    background-color: #ffffff;
+    /* transform: translate(0, -168px); */
+    animation: menuClose 0.3s ease-in-out forwards;
+  }
+
+  #main aside nav.active {
+    animation: menuOpen 0.3s ease-in-out forwards;
+  }
+
+  #menu-bar {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 64px;
+    background-color: #b5ffe1;
+  }
+
+  #menu-bar .menu-button {
+    padding: 0.5rem 1rem;
+    background-color: #08415c;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+  }
+  #menu-bar .text {
+    font-weight: 600;
+    font-size: 1.4rem;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  #main {
+    grid-template-columns: auto;
+  }
+
+  #main aside nav ul {
+    padding: 1rem;
+  }
+
+  #main aside nav ul li {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+  }
+
+  #main aside nav ul li a {
+    margin: 0;
+    background-color: transparent;
+    padding: 0.25rem;
+  }
+
+  #main form {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  #form > label {
+    font-size: 1rem;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    justify-content: start;
+    align-items: center;
+  }
+
+  #form .endereco {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  #form fieldset {
+    grid-template-columns: auto auto;
+    place-self: initial;
+  }
+
+  #form fieldset label {
+    display: inline;
+  }
+
+  #form fieldset select {
+  }
+
+  @keyframes menuOpen {
+    from {
+      opacity: 0;
+      transform: translate(0, -168px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes menuClose {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
