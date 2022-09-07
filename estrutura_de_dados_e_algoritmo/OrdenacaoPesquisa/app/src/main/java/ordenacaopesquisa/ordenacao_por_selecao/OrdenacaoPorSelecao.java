@@ -38,6 +38,7 @@ public class OrdenacaoPorSelecao {
           //Pega o valor menor encontrado coloca na posição do pivô, passa a ser pivô da comparação.
           valores[i] = valorMenorQueOSupostamenteMenorQueTodos;    
         }
+        System.out.printf("[%d : %d] %s%n", i, j, Arrays.toString(valores));
       }
     }
     return valores;
