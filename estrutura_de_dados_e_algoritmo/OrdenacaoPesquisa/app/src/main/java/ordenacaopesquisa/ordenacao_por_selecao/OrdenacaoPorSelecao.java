@@ -43,21 +43,16 @@ public class OrdenacaoPorSelecao {
     return valores;
   }
 
-  public static int[] valoresOrdenadosDecrescente(int[] valores){
-    return valoresOrdenadosDecrescente(valores, valores.length-1);
-  }
-  public static int[] valoresOrdenadosDecrescente(int[] valores, int indiceDoValorSuspostamenteMaiorQueTodos) {
-    System.out.print(indiceDoValorSuspostamenteMaiorQueTodos + "\t");
-    for (int i = 0; i < indiceDoValorSuspostamenteMaiorQueTodos; i++) {
-      if (valores[indiceDoValorSuspostamenteMaiorQueTodos] > valores[i]) {
-        int valorMaiorQueOSuspostamenteMaiorQueTodos = valores[i];
-        valores[i] = valores[indiceDoValorSuspostamenteMaiorQueTodos];
-        valores[indiceDoValorSuspostamenteMaiorQueTodos] = valorMaiorQueOSuspostamenteMaiorQueTodos;
+
+  public static int[] valoresOrdenadosDecrescente(int[] valores) {
+    for(int i = (valores.length -1); i >=0; i--){
+      for (int j = i; j >= 0; j--) {
+        if (valores[i] > valores[j]) {
+          int valorMaiorQueOSupostamenteMaiorQueTodos = valores[j];
+          valores[j] = valores[i];
+          valores[i] = valorMaiorQueOSupostamenteMaiorQueTodos;
+        }
       }
-    }
-    System.out.println(Arrays.toString(valores));
-    if (indiceDoValorSuspostamenteMaiorQueTodos >= (0)) {
-      return valoresOrdenadosDecrescente(valores, indiceDoValorSuspostamenteMaiorQueTodos - 1);
     }
     return valores;
   }
