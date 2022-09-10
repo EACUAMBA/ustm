@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch</title>
+</head>
+
+<body>
+  <h1 id="info"></h1>
+  <script>
+    setInterval(() => {
+
+      changeTime()
+    }, 100);
+
+    function changeTime() {
+      const info = document.getElementById("info");
+      let time = "";
+      let data = new Date();
+      let hora = data.getHours();
+      if (hora < 12) {
+        time = "Bom dia!";
+      } else if (hora >= 12 && hora < 18) {
+        time = "Boa tarde!";
+      } else {
+        time = "Boa noite!";
+      }
+      const currentTime = data.getHours() + ':' + data.getMinutes() + ":" + data.getSeconds();
+
+      let weekDay = data.getDay();
+      switch (weekDay) {
+        case 0: {
+          info.innerText = `Bom domingo! ${time} Agora são ${currentTime} `;
+          break;
+        }
+        case 1: {
+          info.innerText = `Boa segunda! ${time} Agora são ${currentTime}`;
+          break;
+        } case 2: {
+          info.innerText = `Boa terça! ${time} Agora são ${currentTime}`;
+          break;
+        }
+        case 3: {
+          info.innerText = `Boa quarta! ${time} Agora são ${currentTime
+            }`;
+          break;
+        }
+        case 4: {
+          info.innerText = `Boa quinta! ${time} Agora são ${currentTime} `;
+          break;
+        }
+        case 5: {
+          info.innerText = `Boa sexta! ${time} Agora são ${currentTime} `;
+          break;
+        }
+        case 6: {
+          info.innerText = `Boa Sábado! ${time} Agora são ${currentTime}`;
+          break;
+        }
+      }
+
+    }
+  </script>
+</body>
+
+</html>
