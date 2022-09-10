@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if{}else if{}else{}</title>
+
+  <style>
+    .center {
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body class="center">
+  <h1 id="time"></h1>
+  <a id="site" style="padding: .5rem 1rem; background-color: aqua; border-radius: .5rem; font-size:1.2rem"></a>
+</body>
+
+<script type="text/javascript">
+  const time = document.getElementById("time")
+  const data = new Date();
+  const hora = data.getHours();
+  if (hora < 12) {
+    time.innerText = "Bom dia!";
+  } else if (hora >= 12 && hora < 18) {
+    time.innerText = "Boa tarde!";
+  } else {
+    time.innerText = "Boa noite!";
+  }
+  const site = document.getElementById("site")
+  const value = Math.pow(3, Math.sqrt(Math.random()));
+
+  if (value > 0.5) {
+    site.setAttribute("href", "http://google.com");
+    site.setAttribute("target", "_blanket");
+    site.innerText = "Ferramenta de busca!";
+  } else {
+    site.setAttribute("href", "http://ustm.ac.mz");
+    site.setAttribute("target", "_blanket");
+    site.innerText = "Página da USTM!";
+  }
+
+</script>
+
+</html>
