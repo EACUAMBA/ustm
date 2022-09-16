@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 6</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Exercicio 6</h1>
+  <div>
+    <input type="text" name="inteiro" id="inteiro" value="5">
+    <button id="verificar">Verificar</button>
+  </div>
+  <h2 id="result">Introduza um valor aí em cima!</h2>
+  <script>
+    const result = document.getElementById("result")
+    const inteiro = document.getElementById("inteiro")
+    const verificar = document.getElementById("verificar")
+
+    verificar.addEventListener('click', testa)
+
+    function testa() {
+      const valor = inteiro.value;
+      const valorAleatorio = Math.floor(Math.random() * (10 - 1) + 1);
+      if (valor == valorAleatorio) {
+        result.innerText = 'Bom Trabalho';
+      } else {
+        result.innerText = 'Não correspondido';
+      }
+    }
+
+  </script>
+</body>
+
+</html>
