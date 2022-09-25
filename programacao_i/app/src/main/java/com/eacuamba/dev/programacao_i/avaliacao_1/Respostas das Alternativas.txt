@@ -1,0 +1,10 @@
+5 -> A; public class SomaNumero;
+6 -> A; private int numero;
+7 -> B;  private String var;
+8 -> A; imprime 2 porque a instrcao "x++" usa a variavel e depois incrementa uma unidade.
+9 -> A; condição "x>2" sempre é falsa porque x sempre é igual a 1, logo não entra no escopo do if, passa e imprime o x, que é 1.
+10 -> D; é uma concatenação de duas Strings;
+11 -> C; variavel "i" não foi declarado.
+12 -> C; variavel "i" não foi declarado.
+13 -> D; condição "x>2" sempre é falsa porque x sempre é igual a 1, logo não entra no escopo do if.
+14 -> C; não esta a se executar nada;
