@@ -1,0 +1,14 @@
+#Directories
+**/out
+**/.idea
+**/target
+**/bin
+
+#Files
+**/*.class
+**/.iml
+**/.classpath
+**/.project
+**/.vscode
+**/.settings
+**/.exe

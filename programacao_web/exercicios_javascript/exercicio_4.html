@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 4</title>
+</head>
+
+<body>
+  <h1>Exercicio 4</h1>
+  <h2 id="mes"></h2>
+  <script>
+    const mes = document.getElementById('mes');
+    mes.innerText = getMothName(prompt("índice do mês: "));
+
+    function getMothName(monthIndex) {
+      monthIndex = Number(monthIndex);
+      if (monthIndex < 1 || monthIndex > 12)
+        return `Não existe um mês para o índice ${monthIndex
+          }.`
+
+      const currentDate = new Date();
+      currentDate.setMonth(monthIndex - 1);
+
+      const monthName = currentDate.toLocaleDateString('pt', { month: 'long' })
+
+      return monthName;
+    }
+  </script>
+</body>
+
+</html>

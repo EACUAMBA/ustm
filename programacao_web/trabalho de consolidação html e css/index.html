@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalho de Consolidação</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Trabalho de Consolidação (Edilson Alexandre e Carlos Macuacua)</h1>
+  </header>
+
+  <div id="main">
+    <aside>
+      <div id="menu-bar">
+        <span class="menu-button">
+          Menu
+        </span>
+        <span class="text">
+          Trabalho de consolidação
+        </span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Contactos</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+
+    <main>
+      <h2>Formulário de cadastro</h2>
+      <form id="form" action="#">
+        <label>
+          Nome:
+          <input type="text" name="nome" id="input_nome">
+        </label>
+
+        <label>
+          Email:
+          <input type="email" name="email" id="input_email">
+        </label>
+
+        <label>
+          Password:
+          <input type="password" name="password" id="input_password">
+        </label>
+
+        <label>
+          Profissão
+          <input type="text" name="profissao" id="profissao">
+        </label>
+
+        <fieldset class="sexo">
+          <legend>Sexo:</legend>
+          <label>
+            Masculino
+            <input type="radio" name="sexo" value="masculino" id="input_sexo">
+          </label>
+
+          <label>
+            Feminino
+            <input type="radio" name="sexo" value="feminino" id="input_sexo">
+          </label>
+        </fieldset>
+
+        <label class="endereco">
+          <span>Endereço:</span>
+          <textarea name="endereco" id="endereco" cols="30" rows="3"></textarea>
+        </label>
+
+        <fieldset>
+          <legend>Nacionalidade:</legend>
+          <select id="nacionalidade">
+            <option value="mocambique">Moçambicano</option>
+            <option value="angola">Angolano</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Nível acádemico:</legend>
+          <select id="nivel_academico">
+            <option value="basico">Básico</option>
+            <option value="superior">Superior</option>
+          </select>
+        </fieldset>
+
+        <button>Enviar</button>
+      </form>
+    </main>
+  </div>
+
+  <footer>
+    <h1>Construa sites conosco.</h1>
+  </footer>
+
+  <script type="text/javascript">
+    const menuButton = document.querySelector(".menu-button");
+    const menuNav = document.querySelector("#main aside nav");
+
+
+    function handleClickMenuButton(event) {
+      menuNav.classList.toggle("active");
+    }
+    menuButton.addEventListener('click', handleClickMenuButton)
+
+    window.addEventListener("scroll", function (event) {
+      menuNav.classList.remove("active");
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+body{
+    position: relative;
+    height: 100vh;
+}
+
+.absolute{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 2rem;
+    min-width: 2rem;
+    padding: 1rem;
+    background-color: aquamarine;
+    display: block;
+}
+
+.fixed{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    min-height: 2rem;
+    min-width: 2rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgb(46, 137, 221);
+    display: block;
+}
+
+.sticky{
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    min-height: 2rem;
+    min-width: 2rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgb(221, 101, 46);
+    display: block;
+}

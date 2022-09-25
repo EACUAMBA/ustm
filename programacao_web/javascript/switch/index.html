@@ -1,0 +1,102 @@
+<! DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+
+    <style>
+      .body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .currentTime {
+        display: flex;
+        background-color: black;
+        border-radius: 1rem;
+        padding: 1rem 2rem;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+      }
+    </style>
+  </head>
+
+  <body class="body">
+    <h1 id="info"></h1>
+    <script>
+      setInterval(() => {
+
+        changeTime()
+      }, 100);
+
+      function changeTime() {
+        const info = document.getElementById("info");
+        let greeting = "";
+        let data = new Date();
+        let hora = data.getHours();
+        if (hora < 12) {
+          greeting = "Bom dia";
+        } else if (hora >= 12 && hora < 18) {
+          greeting = "Boa tarde";
+        } else {
+          greeting = "Boa noite";
+        }
+
+        const currentTime = data.getHours() + ':' + data.getMinutes() + ":" + data.getSeconds();
+        const divCurrentTime = document.createElement('div');
+        divCurrentTime.innerText = currentTime;
+        divCurrentTime.classList.add("currentTime")
+
+        let weekDay = data.getDay();
+        switch (weekDay) {
+          case 0: {
+            info.innerHTML = `${greeting}, Domingo`;
+            info.appendChild(divCurrentTime)
+            break;
+          }
+          case 1: {
+            info.innerHTML = `${greeting}, Segunda feira`;
+            info.appendChild(divCurrentTime)
+            break;
+          } case 2: {
+            info.innerText = `${greeting}, Terça feira`;
+            info.appendChild(divCurrentTime)
+            break;
+          }
+          case 3: {
+            info.innerText = `${greeting}, Quarta feira`;
+            info.appendChild(divCurrentTime)
+            break;
+          }
+          case 4: {
+            info.innerHTML = `${greeting}, Quinta feira `;
+            info.appendChild(divCurrentTime)
+            break;
+          }
+          case 5: {
+            info.innerHTML = `${greeting}, Sexta feira`;
+            info.appendChild(divCurrentTime)
+            break;
+          }
+          case 6: {
+            info.innerHTML = `${greeting}, Sábado`;
+            info.appendChild(divCurrentTime)
+            break;
+          }
+        }
+
+      }
+    </script>
+  </body>
+
+  </html>

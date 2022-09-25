@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 5</title>
+</head>
+
+<body>
+  <h1>Exercicio 5</h1>
+  <h2 id="resultado"></h2>
+  <script>
+    const resultado = document.getElementById('resultado');
+    resultado.innerText = verificaMaior(prompt("Valor 1: "), prompt("Valor 2: "));
+
+    function verificaMaior(value1, value2) {
+      value1 = Number(value1);
+      value2 = Number(value2);
+      
+      if(value1 > value2){
+        return `O valor ${value1}  é maior que o valor ${value2}`;
+      }else if(value1 < value2){
+        return `O valor ${value1}  é menor que o valor ${value2}`;
+      }
+      else{
+        return `O valor ${value1}  é igual ao valor ${value2}`;
+      }
+
+      return "Não consegui determinar!";
+    }
+  </script>
+</body>
+
+</html>

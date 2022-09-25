@@ -1,0 +1,7 @@
+#directories
+/.gradle
+/.vscode
+/app/bin
+
+#files
+*.class
