@@ -1,5 +1,6 @@
 package com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades;
 
+
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.command_line_interface.CLI;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.config.ApplicationConfig;
 

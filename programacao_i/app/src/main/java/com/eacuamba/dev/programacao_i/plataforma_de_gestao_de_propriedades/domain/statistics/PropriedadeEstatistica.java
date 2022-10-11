@@ -1,5 +1,6 @@
 package com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.statistics;
 
+
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.dto.LocalizacaoFacturouMais;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.dto.PropriedadeEstatisticaDataTable;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.exception.ListaSemDadosException;
@@ -10,7 +11,10 @@ import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domai
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class PropriedadeEstatistica {

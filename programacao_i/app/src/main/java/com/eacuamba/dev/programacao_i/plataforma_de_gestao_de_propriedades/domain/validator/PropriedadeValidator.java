@@ -1,5 +1,6 @@
 package com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.validator;
 
+
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.exception.ValorInvalidoException;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.model.Propriedade;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.model.TipoPropriedade;

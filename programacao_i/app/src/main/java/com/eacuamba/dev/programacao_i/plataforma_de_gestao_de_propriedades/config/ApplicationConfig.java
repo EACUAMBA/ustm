@@ -1,5 +1,7 @@
 package com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.config;
 
+
+
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.command_line_interface.utils.ConsoleUtils;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.exception.ValorNaoEncontradoException;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.model.Propriedade;

@@ -1,10 +1,14 @@
 package com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.repository;
 
+
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.exception.ValorInvalidoException;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.model.Localizacao;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.validator.LocalizacaoValidator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 
 public class LocalizacaoRepositoryFAKE {
     private static LocalizacaoRepositoryFAKE localizacaoRepositoryFAKE;

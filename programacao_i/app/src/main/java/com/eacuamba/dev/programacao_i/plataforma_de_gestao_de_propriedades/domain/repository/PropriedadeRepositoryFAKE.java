@@ -1,5 +1,6 @@
 package com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.repository;
 
+
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.exception.ValorInvalidoException;
 import com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.domain.model.Propriedade;
 
@@ -21,7 +22,7 @@ public class PropriedadeRepositoryFAKE {
         return propriedadeList;
     }
 
-    public  Optional<Propriedade> findById(Long id){
+    public Optional<Propriedade> findById(Long id){
         return propriedadeList.stream().filter((l-> l.getId().equals(id))).findFirst();
     }
 

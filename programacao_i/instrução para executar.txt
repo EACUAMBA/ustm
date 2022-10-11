@@ -1,0 +1,14 @@
+use o comando:
+
+como usei maven use primeiro
+
+caso tenha maven
+
+$ mvn install
+
+
+ e depois
+ 
+$ java -jar .\target\trabalho-pratico-java-programacao-1-jar-with-dependencies.jar
+
+As dependencias estarão no .jar

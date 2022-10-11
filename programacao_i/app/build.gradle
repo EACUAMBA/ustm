@@ -1,5 +1,6 @@
 
 plugins {
+    id("java")
     id 'application' // <1>
 }
 
@@ -13,10 +14,12 @@ dependencies {
     implementation 'com.google.guava:guava:31.0.1-jre' // <4>
     implementation 'com.diogonunes:JColor:5.2.0' // <4>
     implementation 'com.github.freva:ascii-table:1.2.0' // <4>
+
+    compileJava.options.encoding = 'UTF-8'
 }
 
 application {
-    mainClass = 'demo.App' // <5>
+    this.setMainClassName("com.eacuamba.dev.programacao_i.plataforma_de_gestao_de_propriedades.App")// <5>
 }
 
 tasks.named('test') {
