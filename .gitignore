@@ -4,6 +4,9 @@
 **/target
 **/bin
 **/build
+**/.vscode
+**/bin
+**/obj
 
 #Files
 **/*.class
