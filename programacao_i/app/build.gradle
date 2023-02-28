@@ -25,3 +25,7 @@ application {
 tasks.named('test') {
     useJUnitPlatform() // <6>
 }
+
+tasks.named("run"){
+    standardInput = System.in;
+}
