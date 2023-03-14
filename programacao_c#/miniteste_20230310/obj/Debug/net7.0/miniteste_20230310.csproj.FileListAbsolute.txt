@@ -1,0 +1,15 @@
+D:\projectos\ustm\programacao_c#\miniteste_20230310\bin\Debug\net7.0\miniteste_20230310.exe
+D:\projectos\ustm\programacao_c#\miniteste_20230310\bin\Debug\net7.0\miniteste_20230310.deps.json
+D:\projectos\ustm\programacao_c#\miniteste_20230310\bin\Debug\net7.0\miniteste_20230310.runtimeconfig.json
+D:\projectos\ustm\programacao_c#\miniteste_20230310\bin\Debug\net7.0\miniteste_20230310.dll
+D:\projectos\ustm\programacao_c#\miniteste_20230310\bin\Debug\net7.0\miniteste_20230310.pdb
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\miniteste_20230310.csproj.AssemblyReference.cache
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\miniteste_20230310.GeneratedMSBuildEditorConfig.editorconfig
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\miniteste_20230310.AssemblyInfoInputs.cache
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\miniteste_20230310.AssemblyInfo.cs
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\miniteste_20230310.csproj.CoreCompileInputs.cache
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\miniteste_20230310.dll
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\refint\miniteste_20230310.dll
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\miniteste_20230310.pdb
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\miniteste_20230310.genruntimeconfig.cache
+D:\projectos\ustm\programacao_c#\miniteste_20230310\obj\Debug\net7.0\ref\miniteste_20230310.dll

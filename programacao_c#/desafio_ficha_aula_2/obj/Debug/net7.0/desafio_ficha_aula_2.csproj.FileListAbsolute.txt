@@ -1,0 +1,15 @@
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\bin\Debug\net7.0\desafio_ficha_aula_2.exe
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\bin\Debug\net7.0\desafio_ficha_aula_2.deps.json
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\bin\Debug\net7.0\desafio_ficha_aula_2.runtimeconfig.json
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\bin\Debug\net7.0\desafio_ficha_aula_2.dll
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\bin\Debug\net7.0\desafio_ficha_aula_2.pdb
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\desafio_ficha_aula_2.csproj.AssemblyReference.cache
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\desafio_ficha_aula_2.GeneratedMSBuildEditorConfig.editorconfig
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\desafio_ficha_aula_2.AssemblyInfoInputs.cache
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\desafio_ficha_aula_2.AssemblyInfo.cs
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\desafio_ficha_aula_2.csproj.CoreCompileInputs.cache
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\desafio_ficha_aula_2.dll
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\refint\desafio_ficha_aula_2.dll
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\desafio_ficha_aula_2.pdb
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\desafio_ficha_aula_2.genruntimeconfig.cache
+D:\projectos\ustm\programacao_c#\desafio_ficha_aula_2\obj\Debug\net7.0\ref\desafio_ficha_aula_2.dll

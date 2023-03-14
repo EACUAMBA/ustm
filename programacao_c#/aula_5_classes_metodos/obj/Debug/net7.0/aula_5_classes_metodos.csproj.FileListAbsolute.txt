@@ -1,0 +1,15 @@
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\bin\Debug\net7.0\aula_5_classes_metodos.exe
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\bin\Debug\net7.0\aula_5_classes_metodos.deps.json
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\bin\Debug\net7.0\aula_5_classes_metodos.runtimeconfig.json
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\bin\Debug\net7.0\aula_5_classes_metodos.dll
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\bin\Debug\net7.0\aula_5_classes_metodos.pdb
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\aula_5_classes_metodos.csproj.AssemblyReference.cache
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\aula_5_classes_metodos.GeneratedMSBuildEditorConfig.editorconfig
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\aula_5_classes_metodos.AssemblyInfoInputs.cache
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\aula_5_classes_metodos.AssemblyInfo.cs
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\aula_5_classes_metodos.csproj.CoreCompileInputs.cache
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\aula_5_classes_metodos.dll
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\refint\aula_5_classes_metodos.dll
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\aula_5_classes_metodos.pdb
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\aula_5_classes_metodos.genruntimeconfig.cache
+D:\projectos\ustm\programacao_c#\aula_5_classes_metodos\obj\Debug\net7.0\ref\aula_5_classes_metodos.dll
