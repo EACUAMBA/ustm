@@ -3,9 +3,14 @@ using System.Globalization;
 
 namespace Aula5ClassesMetodos
 {
-    class LerDadosDeDuasPessoasDepoisMostraMaisVelha
+    public class Application{
+        static void Main(string[] arguments){
+            LerDadosDeDoisFuncionariosDepoisMostraSalariadoMaisAlto.FuncionarioMaisBemPago();
+        }
+    }
+    public class LerDadosDeDuasPessoasDepoisMostraMaisVelha
     {
-        static void Main(string[] args)
+        public static void PessoaMaisVelha(string[] args)
         {
             Pessoa pessoaMaisVelha = null;
 
@@ -35,10 +40,65 @@ namespace Aula5ClassesMetodos
             Console.WriteLine($"Pessoa mais velha: {pessoaMaisVelha}");
         }
 
-        class Pessoa
+        public class Pessoa
         {
             public string Nome { get; set; }
             public int Idade { get; set; }
+
+            override
+            public string ToString()
+            {
+                return Nome;
+            }
+        }
+    }
+
+     public class LerDadosDeDoisFuncionariosDepoisMostraSalariadoMaisAlto
+    {
+        public static void FuncionarioMaisBemPago()
+        {
+            Funcionario funcionarioMaisBemPago = null;
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine($"Dados do funcionario {i + 1}");
+                Funcionario pessoa = new Funcionario();
+
+                Console.Write("Nome: ");
+                pessoa.Nome = Console.ReadLine();
+
+                Console.Write("Salario: ");
+                pessoa.Salario = decimal.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                if (funcionarioMaisBemPago != null)
+                {
+                    if (pessoa.Salario > funcionarioMaisBemPago.Salario)
+                        funcionarioMaisBemPago = pessoa;
+                }
+                else
+                {
+                    funcionarioMaisBemPago = pessoa;
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine($"Funcionario mais bem pago: {funcionarioMaisBemPago}");
+        }
+        public class Funcionario
+        {
+            public string Nome { get; set; }
+            private  decimal _salario;
+
+            public decimal Salario{
+                get{ return _salario; }
+                set {
+                    if(value< 0){
+                        throw new ArgumentException("Argumento invalido!");
+                    }
+
+                    this._salario = value;
+                }
+            }
 
             override
             public string ToString()
