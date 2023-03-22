@@ -37,7 +37,7 @@ CREATE TABLE cliente(
 
 CREATE TABLE factura(
 	id BIGINT NOT NULL IDENTITY(1, 1),
-	numero BIGINT NOT NULL,
+	numero varchar(255) NOT NULL,
 	"data" DATE NOT NULL,
 	total DECIMAL(12, 2) NOT NULL,
 	cliente_id BIGINT NOT NULL,
@@ -94,6 +94,9 @@ CREATE TABLE recibo_factura(
 	CONSTRAINT FK_RECIBO_FACTURA_FACTURA_ID FOREIGN KEY (factura_id) REFERENCES factura(id),
 	CONSTRAINT FK_RECIBO_FACTURA_RECIBO_ID FOREIGN KEY (recibo_id) REFERENCES recibo(id)
 );
+
+
+
 
 
 
