@@ -1,0 +1,15 @@
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\bin\Debug\net7.0\aula_7_heranca_e_poliformismo.exe
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\bin\Debug\net7.0\aula_7_heranca_e_poliformismo.deps.json
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\bin\Debug\net7.0\aula_7_heranca_e_poliformismo.runtimeconfig.json
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\bin\Debug\net7.0\aula_7_heranca_e_poliformismo.dll
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\bin\Debug\net7.0\aula_7_heranca_e_poliformismo.pdb
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.csproj.AssemblyReference.cache
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.GeneratedMSBuildEditorConfig.editorconfig
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.AssemblyInfoInputs.cache
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.AssemblyInfo.cs
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.csproj.CoreCompileInputs.cache
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.dll
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\refint\aula_7_heranca_e_poliformismo.dll
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.pdb
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.genruntimeconfig.cache
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\ref\aula_7_heranca_e_poliformismo.dll

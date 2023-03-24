@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.eacuamba.dev.AppTest" time="0.209" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\projectos\ustm\programacao_ii\target\test-classes;D:\projectos\ustm\programacao_ii\target\classes;C:\Users\eacuamba\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.0\jackson-databind-2.13.0.jar;C:\Users\eacuamba\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.0\jackson-annotations-2.13.0.jar;C:\Users\eacuamba\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.0\jackson-core-2.13.0.jar;C:\Users\eacuamba\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.7\jackson-datatype-jsr310-2.9.7.jar;C:\Users\eacuamba\.m2\repository\org\projectlombok\lombok\1.18.24\lombok-1.18.24.jar;C:\Users\eacuamba\.m2\repository\com\diogonunes\JColor\5.2.0\JColor-5.2.0.jar;C:\Users\eacuamba\.m2\repository\net\java\dev\jna\jna\5.8.0\jna-5.8.0.jar;C:\Users\eacuamba\.m2\repository\net\java\dev\jna\jna-platform\5.8.0\jna-platform-5.8.0.jar;C:\Users\eacuamba\.m2\repository\com\github\freva\ascii-table\1.2.0\ascii-table-1.2.0.jar;C:\Users\eacuamba\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\eacuamba\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Africa/Harare"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="D:\tools\jdk1.8.0_333\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\eacuamba\AppData\Local\Temp\surefire6823805710510054436\surefirebooter1193265804827190118.jar C:\Users\eacuamba\AppData\Local\Temp\surefire6823805710510054436 2022-10-08T12-13-13_111-jvmRun1 surefire544315694212650973tmp surefire_04307343142238326558tmp"/>
+    <property name="surefire.test.class.path" value="D:\projectos\ustm\programacao_ii\target\test-classes;D:\projectos\ustm\programacao_ii\target\classes;C:\Users\eacuamba\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.0\jackson-databind-2.13.0.jar;C:\Users\eacuamba\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.0\jackson-annotations-2.13.0.jar;C:\Users\eacuamba\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.0\jackson-core-2.13.0.jar;C:\Users\eacuamba\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.7\jackson-datatype-jsr310-2.9.7.jar;C:\Users\eacuamba\.m2\repository\org\projectlombok\lombok\1.18.24\lombok-1.18.24.jar;C:\Users\eacuamba\.m2\repository\com\diogonunes\JColor\5.2.0\JColor-5.2.0.jar;C:\Users\eacuamba\.m2\repository\net\java\dev\jna\jna\5.8.0\jna-5.8.0.jar;C:\Users\eacuamba\.m2\repository\net\java\dev\jna\jna-platform\5.8.0\jna-platform-5.8.0.jar;C:\Users\eacuamba\.m2\repository\com\github\freva\ascii-table\1.2.0\ascii-table-1.2.0.jar;C:\Users\eacuamba\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\eacuamba\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\eacuamba"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="D:\tools\jdk1.8.0_333\jre"/>
+    <property name="basedir" value="D:\projectos\ustm\programacao_ii"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\eacuamba\AppData\Local\Temp\surefire6823805710510054436\surefirebooter1193265804827190118.jar"/>
+    <property name="sun.boot.class.path" value="D:\tools\jdk1.8.0_333\jre\lib\resources.jar;D:\tools\jdk1.8.0_333\jre\lib\rt.jar;D:\tools\jdk1.8.0_333\jre\lib\sunrsasign.jar;D:\tools\jdk1.8.0_333\jre\lib\jsse.jar;D:\tools\jdk1.8.0_333\jre\lib\jce.jar;D:\tools\jdk1.8.0_333\jre\lib\charsets.jar;D:\tools\jdk1.8.0_333\jre\lib\jfr.jar;D:\tools\jdk1.8.0_333\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_333-b02"/>
+    <property name="user.name" value="edils"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="D:\tools\jdk1.8.0_333\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\eacuamba\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\eacuamba\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_333"/>
+    <property name="user.dir" value="D:\projectos\ustm\programacao_ii"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="D:\tools\jdk1.8.0_333\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\tools\apache-maven-3.8.4\bin;D:\tools\jdk1.8.0_333\bin;C:\ProgramData\ComposerSetup\bin;C:\Users\eacuamba\AppData\Local\Android\Sdk\;C:\Users\eacuamba\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\nodejs\;C:\laragon\bin\php\php-8.1.7-Win32-vs16-x64;C:\Users\eacuamba\AppData\Local\Yarn\bin;D:\tools\gradle-7.5.1\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\PostgreSQL\14\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\eacuamba\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.4\bin;C:\Program Files\JetBrains\PhpStorm 2020.3.3\bin;C:\Program Files\JetBrains\DataGrip 2020.3.2\bin;C:\Program Files\JetBrains\WebStorm 2020.3.3\bin;C:\Users\edils\AppData\Roaming\npm;C:\Users\eacuamba\AppData\Roaming\Composer\vendor\bin;C:\Users\eacuamba\AppData\Roaming\npm;C:\Users\eacuamba\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\eacuamba\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.333-b02"/>
+    <property name="java.ext.dirs" value="D:\tools\jdk1.8.0_333\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="shouldAnswerWithTrue" classname="com.eacuamba.dev.AppTest" time="0.019"/>
+</testsuite>
