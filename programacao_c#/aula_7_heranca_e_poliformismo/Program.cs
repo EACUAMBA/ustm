@@ -150,7 +150,7 @@ namespace aula_7_heranca_e_poliformismo
         override
         public string ToString()
         {
-            return $"{this.Nome} - {this.CacularSalario().ToString("C2", CultureInfo.InvariantCulture)}";
+            return $"{this.Nome} - {this.CacularSalario().ToString("C2", new CultureInfo("pt-MZ"))}";
         }
     }
 }
