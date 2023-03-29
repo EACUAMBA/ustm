@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="MyAssembly">
+      <HintPath>.\..\utilitarios\bin\Debug\net7.0\utilitarios.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ConsoleTables" Version="2.4.2" />
+  </ItemGroup>
+
+  <Target Name="CustomAfterPublish" AfterTargets="AfterBuild">
+    <Message Text="ProjectDir: $(ProjectDir)" Importance="high" />
+    <Message Text="TargetDir: $(TargetDir)" Importance="high" />
+    <Copy SourceFiles=".\..\utilitarios\bin\Debug\net7.0\utilitarios.dll" DestinationFolder="$(TargetDir)" />
+    <Copy SourceFiles=".\..\utilitarios\bin\Debug\net7.0\utilitarios.dll" DestinationFolder="$(PublishDir)" />
+  </Target>
+
+</Project>

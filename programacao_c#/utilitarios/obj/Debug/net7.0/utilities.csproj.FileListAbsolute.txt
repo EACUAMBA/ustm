@@ -1,0 +1,12 @@
+D:\projectos\ustm\programacao_c#\utilities\bin\Debug\net7.0\utilities.deps.json
+D:\projectos\ustm\programacao_c#\utilities\bin\Debug\net7.0\utilities.dll
+D:\projectos\ustm\programacao_c#\utilities\bin\Debug\net7.0\utilities.pdb
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\utilities.csproj.AssemblyReference.cache
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\utilities.AssemblyInfoInputs.cache
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\utilities.AssemblyInfo.cs
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\utilities.csproj.CoreCompileInputs.cache
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\utilities.dll
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\refint\utilities.dll
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\utilities.pdb
+D:\projectos\ustm\programacao_c#\utilities\obj\Debug\net7.0\ref\utilities.dll

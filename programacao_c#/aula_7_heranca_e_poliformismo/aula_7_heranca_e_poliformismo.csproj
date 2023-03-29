@@ -7,4 +7,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="MyAssembly">
+         <HintPath>utilities.dll</HintPath>
+    </Reference>
+</ItemGroup>
+
+<Target Name="CustomAfterPublish" AfterTargets="AfterBuild">
+   <Message Text="ProjectDir: $(ProjectDir)" Importance="high" />
+   <Message Text="TargetDir: $(TargetDir)" Importance="high" />
+   <Copy SourceFiles="$(ProjectDir)utilities.dll" DestinationFolder="$(TargetDir)" />
+   <Copy SourceFiles="$(ProjectDir)utilities.dll" DestinationFolder="$(PublishDir)" />
+</Target>
+
 </Project>

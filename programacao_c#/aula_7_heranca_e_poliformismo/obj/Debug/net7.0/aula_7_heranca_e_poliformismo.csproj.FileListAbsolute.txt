@@ -13,3 +13,5 @@ D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\
 D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.pdb
 D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.genruntimeconfig.cache
 D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\ref\aula_7_heranca_e_poliformismo.dll
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\bin\Debug\net7.0\utilities.dll
+D:\projectos\ustm\programacao_c#\aula_7_heranca_e_poliformismo\obj\Debug\net7.0\aula_7_heranca_e_poliformismo.csproj.CopyComplete

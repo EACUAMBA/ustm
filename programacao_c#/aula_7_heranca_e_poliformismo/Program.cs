@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using utilitarios;
 
 namespace aula_7_heranca_e_poliformismo
 {
@@ -9,21 +10,21 @@ namespace aula_7_heranca_e_poliformismo
         {
             do
             {
-                uint numeroDeFuncionarios = AskThis<uint>("Quantos funcionarios vai registar?");
+                uint numeroDeFuncionarios = ConsoleUtilitarios.pergunteIsto<uint>("Quantos funcionarios vai registar?");
                 Funcionario[] funcionarios = new Funcionario[numeroDeFuncionarios];
 
                 for (int i = 0; i < numeroDeFuncionarios; i++)
                 {
                     Funcionario funcionario = new Funcionario();
-                    funcionario.Nome = AskThis<string>("Nome:");
-                    funcionario.HorasTrabalhadas = AskThis<uint>("Horas Trabalhadas:");
-                    funcionario.ValorPorHora = AskThis<decimal>("Valor por hora:");
+                    funcionario.Nome = ConsoleUtilitarios.pergunteIsto<string>("Nome:");
+                    funcionario.HorasTrabalhadas = ConsoleUtilitarios.pergunteIsto<uint>("Horas Trabalhadas:");
+                    funcionario.ValorPorHora = ConsoleUtilitarios.pergunteIsto<decimal>("Valor por hora:");
 
-                    string isOutSourced = AskThis<string>("Outsourced (y/n)?");
+                    string isOutSourced = ConsoleUtilitarios.pergunteIsto<string>("Outsourced (y/n)?");
                     if (isOutSourced.Equals("y"))
                     {
                         FuncionaioTerceirizado funcionaioTerceirizado = new FuncionaioTerceirizado(funcionario);
-                        funcionaioTerceirizado.DespesaAdicional = AskThis<decimal>("Despesa Adicional:");
+                        funcionaioTerceirizado.DespesaAdicional = ConsoleUtilitarios.pergunteIsto<decimal>("Despesa Adicional:");
                         funcionario = funcionaioTerceirizado;
                     }
 
@@ -39,44 +40,6 @@ namespace aula_7_heranca_e_poliformismo
 
 
             } while (false);
-        }
-
-        public static T AskThis<T>(string message)
-        {
-            object o = null;
-            bool invalido = true;
-            do
-            {
-                try
-                {
-                    Console.WriteLine(message);
-                    string valor = Console.ReadLine();
-
-                    if (typeof(T) == typeof(uint))
-                    {
-                        o = (T)(object)uint.Parse(valor);
-                    }
-
-                    if (typeof(T) == typeof(decimal))
-                    {
-                        o = (T)(object)decimal.Parse(valor);
-                    }
-
-                    if (typeof(T) == typeof(string))
-                    {
-                        o = (T)(object)valor;
-                    }
-
-                    invalido = false;
-                }
-                catch (Exception e)
-                {
-                    invalido = true;
-                    Console.WriteLine("O valor digitado está incorecto!");
-                }
-            } while (invalido);
-
-            return (T)o;
         }
     }
 
