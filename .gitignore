@@ -8,7 +8,6 @@
 **/bin
 **/obj
 **/.vs
-**/
 
 #Files
 **/*.class
