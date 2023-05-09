@@ -8,7 +8,6 @@ GO;
 
 CREATE LOGIN basededados
     WITH PASSWORD = 'B4s3.d3.d4d0$';
-;
 GO;
 
 
