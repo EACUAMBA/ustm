@@ -32,7 +32,7 @@ namespace Teste3.ViewModels
 
         private void InitializeViewModel()
         {
-            ApplicationTitle = "Teste3";
+            ApplicationTitle = "Banco Edilson Alexandre Cuamba";
 
             NavigationItems = new ObservableCollection<INavigationControl>
             {
