@@ -1,0 +1,138 @@
+﻿<ui:UiPage
+    x:Class="Teste3.Views.Pages.ContasPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Teste3.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:Teste3.Models"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="DataPage"
+    d:DataContext="{d:DesignInstance local:ContasPage,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+
+    <ui:DynamicScrollViewer>
+        <Grid VerticalAlignment="Top">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Width="300">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="300" UriSource="/Assets/IMG_20230603_192816.jpg" />
+                </Image.Source>
+            </Image>
+
+            <ui:Button Grid.Row="1" Command="{Binding ViewModel.RegistarCommand, Mode=OneWay}"
+                       Content="Registar nova Conta" Margin="8" Icon="Add28" VerticalAlignment="Center" />
+
+            <ui:DataGrid CanUserAddRows="False" x:Name="DataGrid" Grid.Row="2"
+                         ItemsSource="{Binding ViewModel.Contas, Mode=TwoWay}"
+                         SelectedItem="{Binding ViewModel.SelectedConta}"
+                         Margin="8" 
+                         AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Numero}" Header="Número" IsReadOnly="True" Width="Auto">
+
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Titular}" Header="Titular"
+                                        IsReadOnly="True" Width="*">
+
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Saldo}" Header="Saldo"
+                                        IsReadOnly="True" Width="*">
+
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding DataDeCriacao, StringFormat=\{0:dd-MM-yyyy HH:mm:ss\}}"
+                                        Header="Data de Criação" IsReadOnly="True" Width="*">
+
+                    </DataGridTextColumn>
+                    <DataGridTextColumn
+                        Binding="{Binding DataDoUltimoMovimento, StringFormat=\{0:dd-MM-yyyy HH:mm:ss\}}"
+                        Header="Data do Ultimo Movimento" IsReadOnly="True" Width="*">
+
+                    </DataGridTextColumn>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ui:Button
+                                    Command="{Binding DataContext.ViewModel.DepositarCommand ,ElementName=DataGrid}"
+                                    CommandParameter="{Binding SelectedItem, ElementName=DataGrid, Mode=TwoWay}"
+                                    Appearance="Success">
+                                    Depositar
+                                </ui:Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ui:Button
+                                    Command="{Binding DataContext.ViewModel.LevantarCommand ,ElementName=DataGrid}"
+                                    CommandParameter="{Binding SelectedItem, ElementName=DataGrid, Mode=TwoWay}"
+                                    Appearance="Caution">
+                                    Levantar
+                                </ui:Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ui:Button
+                                    Command="{Binding DataContext.ViewModel.ActualizarCommand ,ElementName=DataGrid}"
+                                    CommandParameter="{Binding SelectedItem, ElementName=DataGrid, Mode=TwoWay}"
+                                    Appearance="Primary">
+                                    Actualizar
+                                </ui:Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ui:Button
+                                    Command="{Binding DataContext.ViewModel.RemoverCommand ,ElementName=DataGrid}"
+                                    CommandParameter="{Binding SelectedItem, ElementName=DataGrid, Mode=TwoWay}"
+                                    Appearance="Danger">
+                                    Remover
+                                </ui:Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                    <Grid Background="{TemplateBinding Background}" Margin="5">
+                                        <ContentPresenter VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.CellStyle>
+            </ui:DataGrid>
+        </Grid>
+    </ui:DynamicScrollViewer>
+</ui:UiPage>
