@@ -1,0 +1,30 @@
+@model ContactsManager.Models.Contact
+@{
+    ViewData["Title"] = "Editar " + Model.Name;
+
+}
+
+
+<div>
+   <div>
+    <h1>Criar</h1>
+    <form method="POST" asp-action="Delete" asp-route-id="@Model.Id">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" disabled name="name" id="name" value="@Model.Name">
+
+            <label for="nome">Número de Telefone:</label>
+            <input type="text" disabled name="phoneNumber" id="phoneNumber" value="@Model.PhoneNumber">
+
+            <label for="nome">Correio Electronico:</label>
+            <input type="text" disabled name="email" id="email" value="@Model.Email">
+        </div>
+
+        <button type="submit">Apagar</button>
+    </form>
+   <a asp-action="Index">Voltar</a>
+</div>
+   
+</div>
+
+
