@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/desafio_ficha_aula_2/desafio_ficha_aula_2.csproj",
+                "${workspaceFolder}/Teste3/Teste3.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/desafio_ficha_aula_2/desafio_ficha_aula_2.csproj",
+                "${workspaceFolder}/Teste3/Teste3.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/desafio_ficha_aula_2/desafio_ficha_aula_2.csproj"
+                "${workspaceFolder}/Teste3/Teste3.sln"
             ],
             "problemMatcher": "$msCompile"
         }

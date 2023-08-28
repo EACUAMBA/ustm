@@ -1,0 +1,88 @@
+/*UTILS*/
+:root {
+    --green: #00E500
+}
+
+.circle-light {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deactivated{
+    background-color: black !important;
+}
+
+.deactivated-svg{
+    visibility: hidden;
+}
+
+
+.cars-lights {
+    display: flex;
+}
+
+.main-light {
+    width: 100px;
+    height: 300px;
+    background: black;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.cars-red {
+    background-color: red;
+}
+
+.cars-yellow {
+    background-color: yellow;
+}
+
+.cars-green {
+    background-color: var(--green);
+}
+
+.turn-light {
+    width: 100px;
+    height: 200px;
+    background: black;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    align-self: end
+}
+
+.turn-right-green {
+    fill: var(--green);
+}
+
+.turn-right-yellow {
+    fill: yellow;
+}
+
+.pedestrians-lights{
+    width: 200px;
+    height: 100px;
+    background: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-self: end
+}
+
+.man-standing{
+    fill: red;
+}
+
+.man-walking{
+    fill: var(--green);
+}
