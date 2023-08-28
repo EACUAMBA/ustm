@@ -88,12 +88,12 @@ var contactToUpdate = this._contactsManagerDbContext.Contact.Where(c => c.Id == 
 
         public IActionResult DeleteQuestion(int? id)
         {
-            var contactToUpdate = this._contactsManagerDbContext.Contact.Where(c => c.Id == id).First();
-            if(contactToUpdate == null){
+            var contactToDelete = this._contactsManagerDbContext.Contact.Where(c => c.Id == id).First();
+            if(contactToDelete == null){
                 return NotFound();
             }
             return View(
-                model: contactToUpdate
+                model: contactToDelete
             );
         }
 
