@@ -25,6 +25,7 @@ public class StatisticCLI {
     private static final LocalizacaoRepositoryFAKE localizacaoRepositoryFAKE = LocalizacaoRepositoryFAKE.getInstance();
 
     public static void start() {
+        AccessService.addAccess(MainMenuItems.SEGUNDO.getItemName());
         System.out.println("Bem vindo a area de Estatisticas");
         System.out.println();
 
@@ -79,6 +80,7 @@ public class StatisticCLI {
                     break;
                 }
                 case 10: {
+                    AccessService.addAccess("Retornou ao Menu");
                     return;
                 }
                 default: {
@@ -91,6 +93,7 @@ public class StatisticCLI {
     }
 
     private static void calcularTotalDescontos() {
+        AccessService.addAccess(StatisticMenuItems.SEXTO.getItemName());
         System.out.println("Calculando totais dos descontos.");
         try {
             BigDecimal valor = PropriedadeEstatistica.getValorTotalDescontos(propriedadeRepositoryFAKE.findAll());
@@ -102,6 +105,7 @@ public class StatisticCLI {
     }
 
     private static void calcularTotalRecebidoIncluindoDescontos() {
+        AccessService.addAccess(StatisticMenuItems.QUARTO.getItemName());
         System.out.println("Calculando a localização que facturou mais.");
         try {
             BigDecimal valor = PropriedadeEstatistica.getTotalRecebidoIncluindoDescontos(propriedadeRepositoryFAKE.findAll());
@@ -113,6 +117,7 @@ public class StatisticCLI {
     }
 
     private static void calcularLocalFacturouMais() {
+        AccessService.addAccess(StatisticMenuItems.TERCEIRO.getItemName());
         System.out.println("Calculando a localização que facturou mais.");
         try {
             List<LocalizacaoFacturouMais> localizacaoFacturouMais = PropriedadeEstatistica.getLocalizacaoFacturouMais(propriedadeRepositoryFAKE.findAll(), localizacaoRepositoryFAKE.findAll());
@@ -137,6 +142,7 @@ public class StatisticCLI {
     }
 
     private static void calcularLucroDaEmpresaTendoEmContaAsDespesas() {
+        AccessService.addAccess(StatisticMenuItems.QUINTO.getItemName());
         System.out.println("Calculando o lucro da empresa tendo em conta as despesas (As despesas são 70%, caso queira mudar este valor fale com o programador).");
         System.out.println();
         try {
@@ -150,6 +156,7 @@ public class StatisticCLI {
     }
 
     private static void calcularTotalRecebido() {
+        AccessService.addAccess(StatisticMenuItems.SEGUNDO.getItemName());
         boolean naoVoltar = true;
 
         do {
@@ -215,6 +222,7 @@ public class StatisticCLI {
     }
 
     private static void calcularQuantidadesVendidas() {
+        AccessService.addAccess(StatisticMenuItems.PRIMEIRO.getItemName());
         boolean naoVoltar = true;
 
         do {
@@ -272,6 +280,7 @@ public class StatisticCLI {
     }
 
     static void imprimirDados() {
+        AccessService.addAccess(StatisticMenuItems.SETIMO.getItemName());
         System.out.println("Imprimindo dados das propriedades em forma de tabela:");
         String[] cabecalhos = {"", "Local da Propriedade", "Tipo de Propriedade", "Quartos", "Valor em MT", "Desconto em MT", "Preço Pago pelo Cliente"};
         String[] footer = PropriedadeEstatistica.getRodapeParaTabela(propriedadeRepositoryFAKE.findAll());

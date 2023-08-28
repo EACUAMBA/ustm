@@ -1,26 +1,35 @@
 package com.eacuamba.dev.config;
 
 
-
+import com.eacuamba.dev.command_line_interface.AccessService;
+import com.eacuamba.dev.command_line_interface.MainMenuItems;
 import com.eacuamba.dev.command_line_interface.utils.ConsoleUtils;
 import com.eacuamba.dev.domain.exception.ValorNaoEncontradoException;
 import com.eacuamba.dev.domain.model.Propriedade;
 import com.eacuamba.dev.domain.model.TipoPropriedade;
+import com.eacuamba.dev.domain.model.User;
 import com.eacuamba.dev.domain.repository.LocalizacaoRepositoryFAKE;
 import com.eacuamba.dev.domain.repository.PropriedadeRepositoryFAKE;
 
 import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class ApplicationConfig {
+    private static Connection connection;
+    public  static User authenticatedUser;
 
     public static void setDefaults() {
         Locale.setDefault(new Locale("pt", "MZ"));
     }
 
+
     public static void imprimeDadosDoDesenvolvedor() {
+        AccessService.addAccess(MainMenuItems.TERCEIRO.getItemName());
         System.out.println("Informações do Desenvolvedor:");
         System.out.println("\t Desenvolvido por Edilson Alexandre Cuamba (Código do estudante: 2021 1010 69);");
         System.out.println("\t Estudante na Universidade São Tomás de Moçambique;");
@@ -43,6 +52,7 @@ public class ApplicationConfig {
     }
 
     public static void terminarExecucao() {
+        AccessService.addAccess(MainMenuItems.SAIR.getItemName());
         System.out.println("Obrigado por usar o sistema!");
         System.out.println("Adeus!");
         System.out.println();
@@ -93,6 +103,23 @@ public class ApplicationConfig {
             System.err.println(exception.getLocalizedMessage());
             System.err.flush();
             System.err.close();
+        }
+    }
+
+    public static Connection getConnection() throws SQLException {
+        if (connection == null) {
+            return connection = DriverManager.getConnection("jdbc:sqlite:database/database.db");
+        }
+        return connection;
+    }
+
+    public static void closeConnection(){
+        if(connection != null){
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

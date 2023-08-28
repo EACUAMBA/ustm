@@ -6,10 +6,15 @@ import com.eacuamba.dev.domain.exception.ValorInvalidoException;
 import com.eacuamba.dev.domain.model.Localizacao;
 import com.eacuamba.dev.domain.model.Propriedade;
 import com.eacuamba.dev.domain.model.TipoPropriedade;
+import com.eacuamba.dev.domain.model.User;
 import com.eacuamba.dev.domain.repository.LocalizacaoRepositoryFAKE;
 import com.eacuamba.dev.domain.repository.PropriedadeRepositoryFAKE;
+import com.eacuamba.dev.domain.repository.UserRepository;
+import com.eacuamba.dev.domain.statistics.PropriedadeEstatistica;
+import com.github.freva.asciitable.AsciiTable;
 
 import java.math.BigDecimal;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -21,8 +26,7 @@ public class CLI {
     private static final LocalizacaoRepositoryFAKE localizacaoRepositoryFAKE = LocalizacaoRepositoryFAKE.getInstance();
 
     public static void start() {
-        System.out.println("Bem vindo ao sistema de Gestão de Propriedades");
-        System.out.println("Trabalho Prático de Programação I");
+        AccessService.addAccess("Menu");
         System.out.println();
 
         int proximoPasso;
@@ -57,6 +61,10 @@ public class CLI {
                     imprimeDadosDoDesenvolvedor();
                     break;
                 }
+                case 4: {
+                    printAccessReport();
+                    break;
+                }
                 default: {
                     System.out.println(ConsoleUtils.getConsoleErrorTextBold().format("Erro: Valor introduzido não corresponde a nenhuma das opções na lista."));
                     break;
@@ -66,6 +74,7 @@ public class CLI {
     }
 
     private static void registarPropriedade() {
+        AccessService.addAccess(MainMenuItems.PPRIMEIRO.getItemName());
         System.out.println("Registo de Propriedade");
         System.out.println();
         Propriedade propriedade = new Propriedade();
@@ -219,6 +228,21 @@ public class CLI {
             }
         } while (naoSelecionado);
         return optionalTipoPropriedadeSelecionado;
+    }
+
+    public static void printAccessReport(){
+        System.out.println("Imprimindo relátorio de acessos:");
+        String[] cabecalhos = {"", "Data e Hora", "Recurso"};
+        String[][] dados = UserRepository.findAll().stream().flatMap(user -> user.getAccessList().stream()).map(access -> {
+            return new String[]{
+                    access.getId() + " - " + access.getUser().getName(),
+                    DateTimeFormatter.ofPattern("dd-MM-yyyy 'ás' HH:mm:ss").format(access
+                            .getDateTime()),
+                    access.getResource()
+            };
+        }).toArray(String[][]::new);
+        System.out.println(AsciiTable.getTable(cabecalhos, dados));
+        System.out.println();
     }
 
     private static void imprimeMenu() {

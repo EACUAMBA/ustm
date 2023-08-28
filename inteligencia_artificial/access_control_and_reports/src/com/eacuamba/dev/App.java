@@ -1,6 +1,7 @@
 package com.eacuamba.dev;
 
 import com.eacuamba.dev.command_line_interface.CLI;
+import com.eacuamba.dev.command_line_interface.LoginCLI;
 import com.eacuamba.dev.config.ApplicationConfig;
 
 import java.util.stream.Stream;
@@ -15,6 +16,8 @@ public class App {
         Stream.of(args).forEach(System.out::println);
 
         ApplicationConfig.setDefaults();
-        CLI.start();
+        ApplicationConfig.loadData(); // Pre carrega alguns dados para questão de testes.
+        LoginCLI.signIn();
     }
+
 }
