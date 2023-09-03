@@ -1,0 +1,17 @@
+{
+  "edges": [
+    {
+      "id": "",
+      "name": "Avenida Julies Nyerere",
+      "weight": 10.0,
+      "leftNode": {
+        "id": "",
+        "name": "Ponto A"
+      },
+      "rightNode": {
+        "id": "",
+        "name": "Ponto B"
+      }
+    }
+  ]
+}
