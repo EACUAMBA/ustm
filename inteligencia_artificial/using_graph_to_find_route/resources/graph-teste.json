@@ -1,0 +1,134 @@
+{
+  "edges": [
+    {
+      "uuid": "5785f37e-6694-4bcf-a4b8-4960c328859c",
+      "name": "A \u003c-\u003e B",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "3acbf7bd-edb3-4bcc-b134-b0e998ea7d04",
+        "name": "A"
+      },
+      "rightNode": {
+        "uuid": "a73ad19e-28fe-472d-91b4-981e5a363cea",
+        "name": "B"
+      }
+    },
+    {
+      "uuid": "0f5b04fe-7a03-47ae-b29e-0cfd4de0f322",
+      "name": "A \u003c-\u003e C",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "3acbf7bd-edb3-4bcc-b134-b0e998ea7d04",
+        "name": "A"
+      },
+      "rightNode": {
+        "uuid": "fc068d7b-e4b7-4c02-92ca-f97c8b60d08c",
+        "name": "C"
+      }
+    },
+    {
+      "uuid": "44f18f8c-92af-454f-995d-1877153e930d",
+      "name": "C \u003c-\u003e D",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "fc068d7b-e4b7-4c02-92ca-f97c8b60d08c",
+        "name": "C"
+      },
+      "rightNode": {
+        "uuid": "5ce201a9-0f97-40d4-95fc-78b9081c3f0a",
+        "name": "D"
+      }
+    },
+    {
+      "uuid": "94f4411e-0922-47fc-b80d-7f6315fd8e8f",
+      "name": "B \u003c-\u003e D",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "a73ad19e-28fe-472d-91b4-981e5a363cea",
+        "name": "B"
+      },
+      "rightNode": {
+        "uuid": "5ce201a9-0f97-40d4-95fc-78b9081c3f0a",
+        "name": "D"
+      }
+    },
+    {
+      "uuid": "7180c0bd-3797-4ba7-a01c-cd270844a935",
+      "name": "D \u003c-\u003e F",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "5ce201a9-0f97-40d4-95fc-78b9081c3f0a",
+        "name": "D"
+      },
+      "rightNode": {
+        "uuid": "0b06f9b9-49f8-4536-90a1-58031f2ea332",
+        "name": "F"
+      }
+    },
+    {
+      "uuid": "bc69e1d4-4dba-4851-b1aa-e4c540866d85",
+      "name": "D \u003c-\u003e E",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "5ce201a9-0f97-40d4-95fc-78b9081c3f0a",
+        "name": "D"
+      },
+      "rightNode": {
+        "uuid": "e310be12-d339-4f8d-9e9e-d7bd1fb02405",
+        "name": "E"
+      }
+    },
+    {
+      "uuid": "7fda36f0-be11-41a7-b7af-cfdc047b50bb",
+      "name": "F \u003c-\u003e G",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "0b06f9b9-49f8-4536-90a1-58031f2ea332",
+        "name": "F"
+      },
+      "rightNode": {
+        "uuid": "0f8685d9-5141-4062-a9e8-ad2f3d3e16bc",
+        "name": "G"
+      }
+    },
+    {
+      "uuid": "19021610-e802-4a9b-a4e3-b3585539f03c",
+      "name": "G \u003c-\u003e H",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "0f8685d9-5141-4062-a9e8-ad2f3d3e16bc",
+        "name": "G"
+      },
+      "rightNode": {
+        "uuid": "66cd21e4-506f-473f-8ffb-9379ab59be8f",
+        "name": "H"
+      }
+    },
+    {
+      "uuid": "0f11a5b1-8b1f-4b15-8a39-5ba9a66992ab",
+      "name": "E \u003c-\u003e H",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "e310be12-d339-4f8d-9e9e-d7bd1fb02405",
+        "name": "E"
+      },
+      "rightNode": {
+        "uuid": "66cd21e4-506f-473f-8ffb-9379ab59be8f",
+        "name": "H"
+      }
+    },
+    {
+      "uuid": "f642e30e-6bf7-46a2-ad5b-181e6745471a",
+      "name": "H \u003c-\u003e I",
+      "weight": 1.0,
+      "leftNode": {
+        "uuid": "66cd21e4-506f-473f-8ffb-9379ab59be8f",
+        "name": "H"
+      },
+      "rightNode": {
+        "uuid": "1dd4ea9d-220e-4f05-b433-58324b91ddbc",
+        "name": "I"
+      }
+    }
+  ]
+}

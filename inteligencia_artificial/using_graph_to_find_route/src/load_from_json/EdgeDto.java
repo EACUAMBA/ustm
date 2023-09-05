@@ -1,7 +1,7 @@
 package load_from_json;
 
 public class EdgeDto {
-    public String id;
+    public String uuid;
     public String name;
     public double weight;
     public NodeDto leftNode;
@@ -10,20 +10,20 @@ public class EdgeDto {
     public EdgeDto() {
     }
 
-    public EdgeDto(String id, String name, double weight, NodeDto leftNode, NodeDto rightNode) {
-        this.id = id;
+    public EdgeDto(String uuid, String name, double weight, NodeDto leftNode, NodeDto rightNode) {
+        this.uuid = uuid;
         this.name = name;
         this.weight = weight;
         this.leftNode = leftNode;
         this.rightNode = rightNode;
     }
 
-    public String getId() {
-        return id;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUuidd(String id) {
+        this.uuid = id;
     }
 
     public String getName() {

@@ -92,4 +92,8 @@ public class LoadGraph {
         GraphDto graphDto = LoaderHelper.graphDto();
         GraphDtoToGraph.mapTpGraph(graphDto, graph);
     }
+
+    public static void saveAsJson(Graph graph) {
+        LoaderHelper.saveAsJson(GraphDtoToGraph.mapTpGraphDto(graph));
+    }
 }

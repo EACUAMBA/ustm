@@ -1,0 +1,303 @@
+{
+  "edges": [
+    {
+      "uuid": "db09cfbb-3053-4d30-99da-3138795d1f7c",
+      "name": "",
+      "weight": 71.0,
+      "leftNode": {
+        "uuid": "e0bbe245-46a7-4e5a-b166-9eed31d23859",
+        "name": "Orades"
+      },
+      "rightNode": {
+        "uuid": "17aea745-e66e-4349-82d8-11cb67e79837",
+        "name": "Zerind"
+      }
+    },
+    {
+      "uuid": "151f820c-2094-4af1-b2c5-dbcb6a51a000",
+      "name": "",
+      "weight": 151.0,
+      "leftNode": {
+        "uuid": "e0bbe245-46a7-4e5a-b166-9eed31d23859",
+        "name": "Orades"
+      },
+      "rightNode": {
+        "uuid": "098f6b69-75a4-4bea-a73c-eba3e91b02eb",
+        "name": "Sibiu"
+      }
+    },
+    {
+      "uuid": "05098fe4-2986-448b-b0a7-578f1197a245",
+      "name": "",
+      "weight": 140.0,
+      "leftNode": {
+        "uuid": "d59d5a39-87bb-43f1-8f11-2f4fe0ecacd0",
+        "name": "Arad"
+      },
+      "rightNode": {
+        "uuid": "098f6b69-75a4-4bea-a73c-eba3e91b02eb",
+        "name": "Sibiu"
+      }
+    },
+    {
+      "uuid": "7d16ce1a-5897-4d5a-b919-26d8d7f121ff",
+      "name": "",
+      "weight": 75.0,
+      "leftNode": {
+        "uuid": "d59d5a39-87bb-43f1-8f11-2f4fe0ecacd0",
+        "name": "Arad"
+      },
+      "rightNode": {
+        "uuid": "17aea745-e66e-4349-82d8-11cb67e79837",
+        "name": "Zerind"
+      }
+    },
+    {
+      "uuid": "243bf9a2-b4d7-463b-a735-df77b1d739dc",
+      "name": "",
+      "weight": 118.0,
+      "leftNode": {
+        "uuid": "d59d5a39-87bb-43f1-8f11-2f4fe0ecacd0",
+        "name": "Arad"
+      },
+      "rightNode": {
+        "uuid": "58d989a0-9052-4d01-882a-26d8da629c19",
+        "name": "Timisoara"
+      }
+    },
+    {
+      "uuid": "6c534bc8-c69c-40e6-ab0f-a9d188ca3e4e",
+      "name": "",
+      "weight": 99.0,
+      "leftNode": {
+        "uuid": "098f6b69-75a4-4bea-a73c-eba3e91b02eb",
+        "name": "Sibiu"
+      },
+      "rightNode": {
+        "uuid": "15317f25-56fc-4327-9061-1383c2d8b8f8",
+        "name": "Fagaras"
+      }
+    },
+    {
+      "uuid": "2668fb4c-3c41-412c-8b38-6b221f9ed935",
+      "name": "",
+      "weight": 99.0,
+      "leftNode": {
+        "uuid": "098f6b69-75a4-4bea-a73c-eba3e91b02eb",
+        "name": "Sibiu"
+      },
+      "rightNode": {
+        "uuid": "338022d1-1107-4464-b66f-51977e9daa9e",
+        "name": "Rimnicu Vilcea"
+      }
+    },
+    {
+      "uuid": "307554bd-e02c-4e47-b991-b63546034767",
+      "name": "",
+      "weight": 211.0,
+      "leftNode": {
+        "uuid": "15317f25-56fc-4327-9061-1383c2d8b8f8",
+        "name": "Fagaras"
+      },
+      "rightNode": {
+        "uuid": "33205d75-2724-4910-97b3-4f54e89b5e17",
+        "name": "Bucharest"
+      }
+    },
+    {
+      "uuid": "f4a59e0c-27f7-4df0-9706-b6d2473cb2bd",
+      "name": "",
+      "weight": 90.0,
+      "leftNode": {
+        "uuid": "b475e84e-0608-4c59-b83e-07b3e002ba2d",
+        "name": "Giurgiu"
+      },
+      "rightNode": {
+        "uuid": "33205d75-2724-4910-97b3-4f54e89b5e17",
+        "name": "Bucharest"
+      }
+    },
+    {
+      "uuid": "3bbe815d-9943-4992-a173-70e63174a35d",
+      "name": "",
+      "weight": 97.0,
+      "leftNode": {
+        "uuid": "338022d1-1107-4464-b66f-51977e9daa9e",
+        "name": "Rimnicu Vilcea"
+      },
+      "rightNode": {
+        "uuid": "26cffb67-1b10-4a9c-9c33-c09a548c0560",
+        "name": "Pitesti"
+      }
+    },
+    {
+      "uuid": "8ce74473-505d-4267-a280-06fe1c9789a9",
+      "name": "",
+      "weight": 146.0,
+      "leftNode": {
+        "uuid": "338022d1-1107-4464-b66f-51977e9daa9e",
+        "name": "Rimnicu Vilcea"
+      },
+      "rightNode": {
+        "uuid": "50c24a95-d1b7-4a24-a5fb-9196e16cfa09",
+        "name": "Craiova"
+      }
+    },
+    {
+      "uuid": "35b3b02f-f18f-402d-9c2f-8e2037e55386",
+      "name": "",
+      "weight": 138.0,
+      "leftNode": {
+        "uuid": "26cffb67-1b10-4a9c-9c33-c09a548c0560",
+        "name": "Pitesti"
+      },
+      "rightNode": {
+        "uuid": "50c24a95-d1b7-4a24-a5fb-9196e16cfa09",
+        "name": "Craiova"
+      }
+    },
+    {
+      "uuid": "9e9a3a7d-5d65-48d3-a96d-44b3845bcac5",
+      "name": "",
+      "weight": 120.0,
+      "leftNode": {
+        "uuid": "72d98711-1c0b-41c1-b656-d29f689b2603",
+        "name": "Dobreta"
+      },
+      "rightNode": {
+        "uuid": "50c24a95-d1b7-4a24-a5fb-9196e16cfa09",
+        "name": "Craiova"
+      }
+    },
+    {
+      "uuid": "8fab410a-182d-4d85-acae-c36c238526b5",
+      "name": "",
+      "weight": 101.0,
+      "leftNode": {
+        "uuid": "26cffb67-1b10-4a9c-9c33-c09a548c0560",
+        "name": "Pitesti"
+      },
+      "rightNode": {
+        "uuid": "33205d75-2724-4910-97b3-4f54e89b5e17",
+        "name": "Bucharest"
+      }
+    },
+    {
+      "uuid": "57d87a7c-2343-4652-b142-6cd663f4d422",
+      "name": "",
+      "weight": 85.0,
+      "leftNode": {
+        "uuid": "507debf0-fd97-45c8-bc19-65355ef6a78a",
+        "name": "Urziceni"
+      },
+      "rightNode": {
+        "uuid": "33205d75-2724-4910-97b3-4f54e89b5e17",
+        "name": "Bucharest"
+      }
+    },
+    {
+      "uuid": "b290b1be-1c26-4876-88e6-ae150dfb9bb4",
+      "name": "",
+      "weight": 142.0,
+      "leftNode": {
+        "uuid": "507debf0-fd97-45c8-bc19-65355ef6a78a",
+        "name": "Urziceni"
+      },
+      "rightNode": {
+        "uuid": "e65a6d28-f466-4d03-83f1-801af38fbbbc",
+        "name": "Vaslui"
+      }
+    },
+    {
+      "uuid": "18ae806a-6507-47e2-b289-8ddeb6feb5d2",
+      "name": "",
+      "weight": 98.0,
+      "leftNode": {
+        "uuid": "507debf0-fd97-45c8-bc19-65355ef6a78a",
+        "name": "Urziceni"
+      },
+      "rightNode": {
+        "uuid": "78d727b2-aa66-454c-afdf-e6db3c0e6bf1",
+        "name": "Hirsova"
+      }
+    },
+    {
+      "uuid": "070f6651-d4f2-48e9-bc89-25bd3326cf62",
+      "name": "",
+      "weight": 86.0,
+      "leftNode": {
+        "uuid": "78d727b2-aa66-454c-afdf-e6db3c0e6bf1",
+        "name": "Hirsova"
+      },
+      "rightNode": {
+        "uuid": "2e4b8bb1-f6be-4bca-bba2-85c15f860c2d",
+        "name": "Eforie"
+      }
+    },
+    {
+      "uuid": "747adad7-4579-4dfa-8371-f90a4c3741a3",
+      "name": "",
+      "weight": 92.0,
+      "leftNode": {
+        "uuid": "e65a6d28-f466-4d03-83f1-801af38fbbbc",
+        "name": "Vaslui"
+      },
+      "rightNode": {
+        "uuid": "a3eef2f1-ffcf-4c7f-af87-e6a1f2634d8f",
+        "name": "Lasi"
+      }
+    },
+    {
+      "uuid": "5306fe92-73e6-46a1-86bc-9e04f3df8c95",
+      "name": "",
+      "weight": 87.0,
+      "leftNode": {
+        "uuid": "a3eef2f1-ffcf-4c7f-af87-e6a1f2634d8f",
+        "name": "Lasi"
+      },
+      "rightNode": {
+        "uuid": "411ec592-0080-4472-aa7b-d46070492915",
+        "name": "Neamt"
+      }
+    },
+    {
+      "uuid": "b4d874e8-362b-4f4e-a046-29d8d25d4eb4",
+      "name": "",
+      "weight": 75.0,
+      "leftNode": {
+        "uuid": "031d6ac7-e8cb-48a1-ac13-e27102da8282",
+        "name": "Mehadia"
+      },
+      "rightNode": {
+        "uuid": "72d98711-1c0b-41c1-b656-d29f689b2603",
+        "name": "Dobreta"
+      }
+    },
+    {
+      "uuid": "99747fb2-6814-4f91-abfb-1572b33aa6fe",
+      "name": "",
+      "weight": 70.0,
+      "leftNode": {
+        "uuid": "1ca17c1b-27ac-4c83-9116-be0e6b2eb1d1",
+        "name": "Lugoj"
+      },
+      "rightNode": {
+        "uuid": "031d6ac7-e8cb-48a1-ac13-e27102da8282",
+        "name": "Mehadia"
+      }
+    },
+    {
+      "uuid": "263ae3c8-2ca3-4b36-bb62-d86b4cb5929b",
+      "name": "",
+      "weight": 111.0,
+      "leftNode": {
+        "uuid": "1ca17c1b-27ac-4c83-9116-be0e6b2eb1d1",
+        "name": "Lugoj"
+      },
+      "rightNode": {
+        "uuid": "58d989a0-9052-4d01-882a-26d8da629c19",
+        "name": "Timisoara"
+      }
+    }
+  ]
+}

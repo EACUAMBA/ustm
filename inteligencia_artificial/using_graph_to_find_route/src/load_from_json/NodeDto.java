@@ -1,23 +1,23 @@
 package load_from_json;
 
 public class NodeDto {
-    public String id;
+    public String uuid;
     public String name;
 
     public NodeDto() {
     }
 
-    public NodeDto(String id, String name) {
-        this.id = id;
+    public NodeDto(String uuid, String name) {
+        this.uuid = uuid;
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUuid(String id) {
+        this.uuid = id;
     }
 
     public String getName() {

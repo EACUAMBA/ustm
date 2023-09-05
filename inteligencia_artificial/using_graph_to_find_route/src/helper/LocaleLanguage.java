@@ -3,7 +3,7 @@ package helper;
 import java.util.Locale;
 
 public enum LocaleLanguage {
-        PORTUGUESE(Locale.of("pt", "MZ"), 'ա', 'ֆ'),
+        PORTUGUESE(Locale.of("pt"), 'ա', 'ֆ'),
         ENGLISH(Locale.of("en"), 'a', 'z');
 
         private final Locale mLocale;

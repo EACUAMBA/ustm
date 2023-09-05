@@ -1,16 +1,68 @@
 {
   "edges": [
     {
-      "id": "",
-      "name": "Avenida Julies Nyerere",
+      "uuid": "A",
+      "name": "",
       "weight": 10.0,
       "leftNode": {
-        "id": "",
+        "uuid": "A",
         "name": "Ponto A"
       },
       "rightNode": {
-        "id": "",
+        "uuid": "B",
         "name": "Ponto B"
+      }
+    },
+    {
+      "uuid": "B",
+      "name": "",
+      "weight": 15.0,
+      "leftNode": {
+        "uuid": "A",
+        "name": "Ponto A"
+      },
+      "rightNode": {
+        "uuid": "C",
+        "name": "Ponto C"
+      }
+    },
+    {
+      "uuid": "C",
+      "name": "",
+      "weight": 20.0,
+      "leftNode": {
+        "uuid": "C",
+        "name": "Ponto C"
+      },
+      "rightNode": {
+        "uuid": "D",
+        "name": "Ponto D"
+      }
+    },
+    {
+      "uuid": "D",
+      "name": "",
+      "weight": 20.0,
+      "leftNode": {
+        "uuid": "B",
+        "name": "Ponto B"
+      },
+      "rightNode": {
+        "uuid": "D",
+        "name": "Ponto D"
+      }
+    },
+    {
+      "uuid": "E",
+      "name": "",
+      "weight": 20.0,
+      "leftNode": {
+        "uuid": "B",
+        "name": "Ponto B"
+      },
+      "rightNode": {
+        "uuid": "C",
+        "name": "Ponto C"
       }
     }
   ]

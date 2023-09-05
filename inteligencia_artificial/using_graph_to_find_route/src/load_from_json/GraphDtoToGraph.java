@@ -5,21 +5,23 @@ import graph.Node;
 
 public class GraphDtoToGraph {
 
-    public static Graph mapTpGraph(GraphDto graphDto) {
+    public static GraphDto mapTpGraphDto(Graph graph) {
 
-        Graph graph = new Graph();
-        graphDto
-                .getEdges()
-                .forEach(edgeDto ->
-                        graph.addEdge(
-                                edgeDto.weight,
-                                edgeDto.getName(),
-                                new Node(graph, edgeDto.getLeftNode().getName()),
-                                new Node(graph, edgeDto.getRightNode().getName())
-                        )
-                );
+        GraphDto graphDto = new GraphDto();
 
-        return graph;
+        graph
+                .getEdgeList()
+                .forEach(edge -> {
+                    EdgeDto edgeDto = new EdgeDto();
+                    edgeDto.setUuidd(edge.getUuid());
+                    edgeDto.setName(edge.getName());
+                    edgeDto.setWeight(edge.getWeight());
+                    edgeDto.setLeftNode(new NodeDto(edge.getLeftNode().getUuid(), edge.getLeftNode().getName()));
+                    edgeDto.setRightNode(new NodeDto(edge.getRightNode().getUuid(), edge.getRightNode().getName()));
+                    graphDto.getEdges().add(edgeDto);
+                });
+
+        return graphDto;
     }
 
     public static void mapTpGraph(GraphDto graphDto, Graph graph) {
@@ -27,10 +29,11 @@ public class GraphDtoToGraph {
                 .getEdges()
                 .forEach(edgeDto ->
                         graph.addEdge(
+                                edgeDto.getUuid(),
                                 edgeDto.weight,
                                 edgeDto.getName(),
-                                new Node(graph, edgeDto.getLeftNode().getName()),
-                                new Node(graph, edgeDto.getRightNode().getName())
+                                Node.build(graph, edgeDto.leftNode),
+                                Node.build(graph, edgeDto.rightNode)
                         )
                 );
     }
