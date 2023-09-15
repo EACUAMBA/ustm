@@ -1,4 +1,4 @@
-package puzzle;
+package com.eacuamba.puzzle;
 
 public enum Direction {
     UP,
@@ -6,7 +6,7 @@ public enum Direction {
     LEFT,
     RIGHT;
 
-    Puzzle.Position getPosition(Puzzle.Position position) {
+    Puzzle.Position turnPosition(Puzzle.Position position) {
         switch (this) {
             case UP -> {
                 return new Puzzle.Position(position.x - 1, position.y);

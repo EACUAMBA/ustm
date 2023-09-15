@@ -1,18 +1,23 @@
-package puzzle;
+package com.eacuamba.puzzle;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static java.lang.Boolean.FALSE;
 import static java.util.Objects.nonNull;
-import static puzzle.Application.*;
 
 public class Puzzle {
     private final static SecureRandom secureRandom = new SecureRandom();
-    private final Integer[][] matrix = new Integer[3][3];
+    private final Integer[][] matrix;
+    private final int size;
+    private final StringBufferHelper stringBufferHelper;
 
-    public Puzzle() {
+    public Puzzle(int lines, int columns, StringBufferHelper stringBufferHelper) {
+        this.matrix = new Integer[lines][columns];
+        this.size = (lines * columns);
+        this.stringBufferHelper = stringBufferHelper;
         this.fillMatrix();
     }
 
@@ -32,7 +37,7 @@ public class Puzzle {
     }
 
     private int getRandomNumber() {
-        int i = secureRandom.nextInt(9);
+        int i = secureRandom.nextInt(this.size);
         return i + 1;
     }
 
@@ -50,17 +55,17 @@ public class Puzzle {
     }
 
     public void printState() {
-        for (int line = 0; line < matrix.length; line++) {
-            for (int column = 0; column < matrix[line].length; column++) {
-                addTextToBufferFormatted(" %s ", Objects.toString(matrix[line][column], " "));
+        for (Integer[] integers : matrix) {
+            for (Integer integer : integers) {
+                stringBufferHelper.addTextToBufferFormatted(" %s ", Objects.toString(integer, " "));
             }
-            addTextToBuffer();
+            stringBufferHelper.addTextToBuffer();
         }
     }
 
     public void changePosition(Position origin, Position target) {
-        addTextToBufferFormatted("Change position from %s to %s.%n", origin, target);
-        addTextToBuffer("Current state:");
+        stringBufferHelper.addTextToBufferFormatted("Change position from %s to %s.%n", origin, target);
+        stringBufferHelper.addTextToBuffer("Current state:");
         this.printState();
         Integer originValue = this.matrix[origin.x][origin.y];
         Integer targetValue = this.matrix[target.x][target.y];
@@ -75,18 +80,18 @@ public class Puzzle {
             positionDirection.origin = position;
             positionDirection.direction = direction;
 
-            positionDirection.target = direction.getPosition(position);
-            positionDirection.target.tryToAccess(this.matrix);
+            positionDirection.target = direction.turnPosition(position);
+            positionDirection.target.canAccess(this.matrix);
 
             return positionDirection;
         } catch (Exception e) {
-            addTextToBufferFormatted("Can't go %s!%n", direction.name());
+            stringBufferHelper.addTextToBufferFormatted("Can't go %s!%n", direction.name());
             return null;
         }
     }
 
     public List<PositionDirection> getAvailableChanges(Position position) {
-        addTextToBuffer("\nChecking available directions");
+        stringBufferHelper.addTextToBuffer("\nChecking available directions");
         final List<PositionDirection> positionDirectionList = new ArrayList<>();
         //UP
         positionDirectionList.add(this.checkDirection(position, Direction.UP));
@@ -103,9 +108,9 @@ public class Puzzle {
         //Sanitize
         positionDirectionList.removeIf(Objects::isNull);
 
-        addTextToBufferFormatted("Possible directions:%n");
-        positionDirectionList.forEach(positionDirection -> addTextToBuffer(positionDirection.toString()));
-        addTextToBuffer();
+        stringBufferHelper.addTextToBufferFormatted("Possible directions:%n");
+        positionDirectionList.forEach(positionDirection -> stringBufferHelper.addTextToBuffer(positionDirection.toString()));
+        stringBufferHelper.addTextToBuffer();
         return positionDirectionList;
     }
 
@@ -146,8 +151,19 @@ public class Puzzle {
             this.y = y;
         }
 
-        public Integer tryToAccess(Integer[][] matrix) {
-            return matrix[x][y];
+        public void canAccess(Integer[][] matrix) {
+            boolean canAccess = true;
+            if (this.x >= matrix.length || this.x < 0) {
+                canAccess = false;
+            } else {
+                if (this.y >= matrix[this.x].length || this.y < 0) {
+                    canAccess = false;
+                }
+            }
+
+            if (FALSE.equals(canAccess)) {
+                throw new RuntimeException("You can't access this place " + this.toString() + "!");
+            }
         }
 
         @Override
