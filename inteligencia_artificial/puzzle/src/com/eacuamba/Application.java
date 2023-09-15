@@ -40,7 +40,7 @@ public class Application {
     }
 
     public static void pushToFile(String text, LocalDateTime localDateTime) {
-        Path filePath = Paths.get(String.format("D:/puzzle_resolution_%s_%s.txt", DateTimeFormatter.ofPattern("dd-MM-yyyy'T'HH.mm.ss").format(localDateTime), Thread.currentThread().getName())).normalize();
+        Path filePath = Paths.get(String.format("D:/puzzle_resolution_%s.txt", DateTimeFormatter.ofPattern("dd-MM-yyyy'T'HH.mm.ss").format(localDateTime))).normalize();
 
         System.out.println("Printing to file " + filePath.toAbsolutePath());
 
