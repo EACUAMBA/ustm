@@ -21,7 +21,6 @@ public class CreateContactController : ControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     public ActionResult Create(CreateContactRequest createContactRequest)
     {
-        this._createContactService.Create(createContactRequest);
-        return StatusCode(200, "Contacto registado com sucesso!");
+        return StatusCode(200, this._createContactService.Create(createContactRequest));
     }
 }

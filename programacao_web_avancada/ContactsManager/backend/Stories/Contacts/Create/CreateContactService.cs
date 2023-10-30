@@ -13,7 +13,7 @@ public class CreateContactService
     public CreateContactService(SqliteDbContext sqliteDbContext){
         this._sqliteDbContext = sqliteDbContext;
     }
-    public void Create(CreateContactRequest createContactRequest)
+    public int? Create(CreateContactRequest createContactRequest)
     {
 
         List<Contact> contactListWithSamePhoneNumber = this._sqliteDbContext.Contacts.Where(c => c.PhoneNumber.Equals(createContactRequest.PhoneNumber)).ToList();
@@ -31,5 +31,7 @@ public class CreateContactService
 
         this._sqliteDbContext.Contacts.Add(contact);
         this._sqliteDbContext.SaveChanges();
+
+        return contact.Id;
     }
 }
