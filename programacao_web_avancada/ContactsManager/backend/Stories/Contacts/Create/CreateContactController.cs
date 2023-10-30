@@ -1,18 +1,27 @@
 using System.Net.Mime;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Stories.Contacts.Create;
+namespace backend.Stories.Contacts.Create;
 
+[Authorize]
 [ApiController]
 [Route("api/contacts")]
 public class CreateContactController : ControllerBase
 {
 
+    private readonly CreateContactService _createContactService;
+
+    public CreateContactController(CreateContactService createContactService){
+        this._createContactService = createContactService;
+    }
+
     [HttpPost]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
-    public ActionResult create(CreateContactRequest createContactRequest)
+    public ActionResult Create(CreateContactRequest createContactRequest)
     {
-        return StatusCode(200, createContactRequest);
+        this._createContactService.Create(createContactRequest);
+        return StatusCode(200, "Contacto registado com sucesso!");
     }
 }
