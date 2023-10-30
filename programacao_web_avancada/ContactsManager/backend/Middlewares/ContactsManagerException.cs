@@ -1,6 +1,6 @@
 namespace Middlewares
 {
-    public class ContactsManagerException : Exception
+    public class ContactsManagerException : SystemException
     {
         private readonly int _statusCodes;
         private readonly string _cause;

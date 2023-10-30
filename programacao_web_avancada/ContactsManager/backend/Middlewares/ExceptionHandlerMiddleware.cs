@@ -1,15 +1,17 @@
 namespace Middlewares;
 
 using System.Text;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Rewrite;
 using Middlewares;
 
 public class ExceptionHandlerMiddleware
 {
     private readonly RequestDelegate _requestDelegate;
 
-    public ExceptionHandlerMiddleware(RequestDelegate requestDelegate)
+    public ExceptionHandlerMiddleware(RequestDelegate next)
     {
-        this._requestDelegate = requestDelegate;
+        this._requestDelegate = next;
     }
 
     public async Task InvokeAsync(HttpContext httpContext)
@@ -29,16 +31,10 @@ public class ExceptionHandlerMiddleware
         if (exception is ContactsManagerException contactsManagerException)
         {
             httpContext.Response.StatusCode = contactsManagerException.StatusCodes;
-
-            var causeAsByteArray = Encoding.UTF8.GetBytes(contactsManagerException.Cause);
-
-            using (MemoryStream memoryStream = new MemoryStream(causeAsByteArray))
-            {
-                httpContext.Response.Body = memoryStream;
-            }
+            await httpContext.Response.WriteAsync(contactsManagerException.Cause);
         }else{
             httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            httpContext.Response.WriteAsync(exception.Message);
+            await httpContext.Response.WriteAsync(exception.Message);
         }
     }
 }
