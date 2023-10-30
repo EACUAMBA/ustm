@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -22,7 +23,7 @@ public class LoginController : ControllerBase
         string email = "edilsoncuamba@gmail.com";
         string password = "P4ssw0rd";
 
-        if (!email.Equals(loginRequest.email) && !password.Equals(loginRequest.password))
+        if (!email.Equals(loginRequest.email) || !password.Equals(loginRequest.password))
         {
             return StatusCode(401, "Credentials incorrect!");
         }
@@ -32,15 +33,15 @@ public class LoginController : ControllerBase
         var jwtKeyAsSymmetricSecurityKey = new SymmetricSecurityKey(jwtKeyAsUTF8Bytes);
         var jwtKeyAsSigningCredentials = new SigningCredentials(jwtKeyAsSymmetricSecurityKey, SecurityAlgorithms.HmacSha256);
 
-        var jwtSecutiryToken = new JwtSecurityToken(
+        var jwtSecurityToken = new JwtSecurityToken(
             this._iConfiguration["Jwt:Issuer"],
             this._iConfiguration["Jwt:Issuer"],
             null,
-            expires: DateTime.Now.AddMinutes(30),
+            expires: DateTime.Now.AddDays(2),
             signingCredentials: jwtKeyAsSigningCredentials
         );
 
-        var token = new JwtSecurityTokenHandler().WriteToken(jwtSecutiryToken);
+        var token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
 
         Response.Headers.Authorization = $"Bearer {token}";
         return StatusCode(200, "Your token is at the headers. Authorization: Bearer abc...xyz");
