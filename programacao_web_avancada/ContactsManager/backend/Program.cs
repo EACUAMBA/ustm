@@ -1,5 +1,5 @@
 using System.Text;
-using Database;
+using DbContexts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -12,8 +12,10 @@ var jwtKeyAsUTF8Bytes = Encoding.UTF8.GetBytes(jwtKey);
 var jwtKeyAsSymmetricSecurityKey = new SymmetricSecurityKey(jwtKeyAsUTF8Bytes);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-.AddJwtBearer((options) => {
-    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters{
+.AddJwtBearer((options) =>
+{
+    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
         ValidateIssuer = true,
         ValidateAudience = false,
         ValidateLifetime = true,
@@ -24,12 +26,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     };
 });
 
-var options = new DbContextOptionsBuilder<SqliteDBContext>()
+var options = new DbContextOptionsBuilder<SqliteDbContext>()
 .UseSqlite(connectionString: builder.Configuration.GetSection("ConnectionStrings:sqlite").Get<string>())
 .Options;
-var sqliteDBContext= new SqliteDBContext(options);
 
-builder.Services.AddSingleton(sqliteDBContext);
+builder.Services.AddSingleton(new SqliteDbContext(options));
 builder.Services.AddControllers();
 var app = builder.Build();
 app.MapControllers();
