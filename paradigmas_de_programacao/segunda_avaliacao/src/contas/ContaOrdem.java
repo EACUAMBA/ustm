@@ -22,7 +22,7 @@ public class ContaOrdem extends Conta{
 
     @Override
     public double saldoReal(double valor) {
-        return this.saldo + valor + (valor * ((double) 1 / 100));
+        return this.saldoReal = this.saldo + valor + (valor * ((double) 1 / 100));
     }
 
     @Override

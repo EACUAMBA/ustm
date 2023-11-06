@@ -3,7 +3,8 @@ package contas;
 public abstract class Conta implements SaldoReal {
     protected String numero;
     protected String titular;
-    protected Double saldo;
+    protected Double saldo = 0D;
+    protected Double saldoReal = 0D;
 
     public Conta() {
     }

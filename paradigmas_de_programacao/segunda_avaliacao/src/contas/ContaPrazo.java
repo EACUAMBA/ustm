@@ -11,7 +11,7 @@ public class ContaPrazo extends Conta{
 
     @Override
     public double saldoReal(double valor) {
-        return this.saldo + valor - (valor * ((double) 3 / 100));
+        return this.saldoReal = this.saldo + valor - (valor * ((double) 3 / 100));
     }
 
     @Override
