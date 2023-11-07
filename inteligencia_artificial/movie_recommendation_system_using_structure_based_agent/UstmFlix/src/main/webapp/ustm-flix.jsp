@@ -53,11 +53,12 @@
 </div>
 <div id="movies">
     <c:forEach items="${movieList}" var="movie">
-        <a class="movie" href="?userId=${userId}&movieId=${movie.index}">
+        <a class="movie" href="movie?userId=${userId}&movieId=${movie.index}">
             <h2>
                     ${movie.title}
             </h2>
             <p>${movie.directorName}</p>
+            <p>${movie.actorOneName}, ${movie.actorTwoName}, ${movie.actorThreeName}</p>
             <span>${movie.genreFormatted()}</span>
         </a>
     </c:forEach>

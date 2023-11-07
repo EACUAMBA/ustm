@@ -16,13 +16,14 @@ import com.eacuamba.dev.ustmflix.entities.Movie;
 import com.eacuamba.dev.ustmflix.graph.MovieGraph;
 import com.eacuamba.dev.ustmflix.graph.MovieNode;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "ustmFlix", value = "/")
+@WebServlet("/")
 public class UstmFlix extends HttpServlet {
     MovieGraph movieGraph = new MovieGraph();
     public void init() {
@@ -38,7 +39,7 @@ public class UstmFlix extends HttpServlet {
         User userById = this.getUserById(id);
         Preferences preferences = userById.getPreferences();
 
-        List<Movie> list = new ArrayList<>(movieGraph.getMovieNodeList(20).stream().map(MovieNode::getValue).toList());
+        List<Movie> list = new ArrayList<>(movieGraph.getMovieNodeList(preferences).stream().map(MovieNode::getValue).toList());
 
         if(Objects.isNull(preferences) || (preferences.getActors().isEmpty() && preferences.getDirectors().isEmpty()&& preferences.getRanking().isEmpty() && preferences.getGenres().isEmpty())){
             Collections.shuffle(list);
@@ -75,7 +76,7 @@ public class UstmFlix extends HttpServlet {
     }
 
     private void save(User user){
-        Gson gson = new Gson();
+        Gson gson =  new GsonBuilder().setPrettyPrinting().create();
         String jsonPath = "D:\\workspace\\ustm\\inteligencia_artificial\\movie_recommendation_system_using_structure_based_agent\\UstmFlix\\src\\main\\resources\\json_data\\users.json";
         try {
             String readString = Files.readString(Paths.get(jsonPath));

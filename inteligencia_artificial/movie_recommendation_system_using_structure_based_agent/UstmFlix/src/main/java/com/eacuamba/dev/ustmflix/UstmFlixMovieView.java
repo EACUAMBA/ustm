@@ -6,6 +6,7 @@ import com.eacuamba.dev.ustmflix.entities.Movie;
 import com.eacuamba.dev.ustmflix.graph.MovieGraph;
 import com.eacuamba.dev.ustmflix.graph.MovieNode;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -23,7 +24,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-@WebServlet(name = "ustmFlix", value = "/movie")
+@WebServlet("/movie")
 public class UstmFlixMovieView extends HttpServlet {
     MovieGraph movieGraph = new MovieGraph();
 
@@ -41,12 +42,12 @@ public class UstmFlixMovieView extends HttpServlet {
         Preferences preferences = user.getPreferences();
 
 
-        String movieId = request.getParameter("moviewId");
+        String movieId = request.getParameter("movieId");
 
-        Movie movie = this.movieGraph.getMovieWithIndex(movieId);
+        Movie movie = this.movieGraph.getMovieWithIndex(Integer.parseInt(movieId));
 
         if (!movie.getGenreList().isEmpty()) {
-            preferences.getGenres().add(movie.getGenreList().get(1));
+            preferences.getGenres().addAll(movie.getGenreList());
         }
         preferences.getDirectors().add(movie.getDirectorName());
         preferences.getRanking().add(movie.getImdbScore());
@@ -60,7 +61,7 @@ public class UstmFlixMovieView extends HttpServlet {
         request.setAttribute("utilizadorNome", user.getName());
         request.setAttribute("movie", movie);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ustm-flix.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/movie.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -85,7 +86,7 @@ public class UstmFlixMovieView extends HttpServlet {
     }
 
     private void save(User user) {
-        Gson gson = new Gson();
+        Gson gson =  new GsonBuilder().setPrettyPrinting().create();
         String jsonPath = "D:\\workspace\\ustm\\inteligencia_artificial\\movie_recommendation_system_using_structure_based_agent\\UstmFlix\\src\\main\\resources\\json_data\\users.json";
         try {
             String readString = Files.readString(Paths.get(jsonPath));

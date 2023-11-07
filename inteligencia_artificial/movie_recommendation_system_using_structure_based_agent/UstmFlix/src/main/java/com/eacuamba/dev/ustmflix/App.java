@@ -41,7 +41,7 @@ public class App {
 
     private static List<Movie> retrieveMovieList() {
         List<Movie> movieList = new ArrayList<>();
-        String sql = "select director_name, duration, actor_1_name, actor_2_name, actor_3_name, genres, title, imdb_score from movie;";
+        String sql = "select director_name, duration, actor_1_name, actor_2_name, actor_3_name, genres, title, imdb_score, `index` from movie;";
 
         try (PreparedStatement preparedStatement = getConnection().prepareStatement(sql);) {
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -50,13 +50,14 @@ public class App {
                 Movie movie = Movie
                         .builder()
                         .directorName(resultSet.getString("director_name"))
-                        .genreList(Optional.ofNullable(resultSet.getString("genres")).map(s -> Arrays.stream(s.split("[|]")).toList()).orElse(new ArrayList<>()))
+                        //.genreList(Optional.ofNullable(resultSet.getString("genres")).map(s -> Arrays.stream(s.split("[|]")).toList()).orElse(new ArrayList<>()))
                         .genres(resultSet.getString("genres"))
                         .actorOneName(resultSet.getString("actor_1_name"))
                         .actorTwoName(resultSet.getString("actor_2_name"))
                         .actorThreeName(resultSet.getString("actor_3_name"))
                         .imdbScore(resultSet.getDouble("imdb_score"))
                         .title(resultSet.getString("title"))
+                        .index(resultSet.getInt("index"))
                         .build();
 
                 movieList.add(movie);

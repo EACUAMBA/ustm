@@ -3,7 +3,9 @@ package com.eacuamba.dev.ustmflix.entities;
 import lombok.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Getter
 @Setter
@@ -18,8 +20,6 @@ public class Movie {
     private String actorTwoName;
     private String actorThreeName;
     private String genres;
-    @Builder.Default
-    private List<String> genreList = new ArrayList<>();
     private String title;
     private String language;
     private String country;
@@ -27,6 +27,10 @@ public class Movie {
     private Double imdbScore;
 
     public String genreFormatted(){
-        return this.genreList.stream().reduce((a, b) -> a +", " + b ).get();
+        return this.getGenreList().stream().reduce((a, b) -> a +", " + b ).get();
+    }
+
+    public List<String> getGenreList(){
+        return Optional.ofNullable(this.genres).map(s -> Arrays.stream(s.split("[|]")).toList()).orElse(new ArrayList<>());
     }
 }

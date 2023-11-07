@@ -2,9 +2,13 @@ package com.eacuamba.dev.ustmflix.graph;
 
 
 
+import com.eacuamba.dev.ustmflix.dto.Preferences;
 import com.eacuamba.dev.ustmflix.entities.Movie;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MovieGraph {
     private final Set<Node<?>> nodeList = new HashSet<>();
@@ -178,11 +182,59 @@ public class MovieGraph {
         return this.nodeList.stream().filter(MovieNode.class::isInstance).map(MovieNode.class::cast).limit(size).toList();
     }
 
+    public List<MovieNode> getMovieNodeList(Preferences preferences){
+        LinkedList<MovieNode> movieNodeList = new LinkedList<>(this.getMovieNodeList());
+        Map<Double, List<Double>> ranking = preferences.getRanking().stream().collect(Collectors.groupingBy(s -> s));
+        Map<String, List<String>> directors = preferences.getDirectors().stream().collect(Collectors.groupingBy(s -> s));
+
+        if(!preferences.getActors().isEmpty()){
+            Map<String, List<String>> actors = preferences.getActors().stream().collect(Collectors.groupingBy(s -> s));
+            Set<Map.Entry<String, List<String>>> entries = actors.entrySet();
+            Map.Entry<String, List<String>>  entryActorBig = null;
+            for(Map.Entry<String, List<String>>  entry: entries){
+                if(entryActorBig == null){
+                    entryActorBig = entry;
+                }
+
+                if(entryActorBig.getValue().size() < entry.getValue().size()){
+                    entryActorBig = entry;
+                }
+            }
+
+            String actorLikedMoreName = entryActorBig.getKey();
+            ActorNode actorNode = this.getActorNodeList().stream().filter(a -> a.getName().equals(actorLikedMoreName))
+                    .findFirst().get();
+            actorNode.getMovieNodeList().forEach(movieNodeList::addFirst);
+        }
+
+        if(!preferences.getGenres().isEmpty()){
+            Map<String, Long> genres = preferences.getGenres().stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+            List<Map.Entry<String, Long>> entryList = genres.entrySet().stream()
+                    .sorted((o1, o2) -> o1.getValue().compareTo(o2.getValue()))
+                    .toList();
+
+            entryList.stream()
+                    .forEach(stringLongEntry -> {
+                        this.getGenreNodeList()
+                                .stream().filter(g -> g.getName().equals(stringLongEntry.getKey()))
+                                .map(Node::getMovieNodeList)
+                                .forEach(m -> {
+                                    m.forEach(movieNodeList::addFirst);
+                                });
+                    });
+        }
+
+
+        return movieNodeList.stream()
+                .map(MovieNode.class::cast)
+                .toList();
+    }
+
     public List<ActorNode> getActorNodeList(){
         return this.nodeList.stream().filter(ActorNode.class::isInstance).map(ActorNode.class::cast).toList();
     }
 
-    public Movie getMovieWithIndex(String movieId) {
+    public Movie getMovieWithIndex(Integer movieId) {
        return this.getMovieNodeList().stream().map(Node::getValue).filter(m -> m.getIndex().equals(movieId)).findFirst().get();
     }
 }

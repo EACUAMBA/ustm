@@ -51,11 +51,19 @@
     <h2 style="padding: 1rem;">UTILIZADOR: ${utilizadorNome}</h2>
 </div>
 <div id="movies">
+<article class="movie">
     <h2>
         ${movie.title}
     </h2>
     <p>${movie.directorName}</p>
+    <p>${movie.actorOneName}, ${movie.actorTwoName}, ${movie.actorThreeName}</p>
     <span>${movie.genreFormatted()}</span>
+</article>
+
+    <%
+            String userId = request.getParameter("userId");
+    %>
+    <a href="./?userId=<%= userId%>">Voltar</a>
 </div>
 </body>
 </html>
