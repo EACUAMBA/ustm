@@ -32,6 +32,6 @@ public class ContaOrdem extends Conta{
 
     @Override
     public String toString() {
-        return super.toString() + String.format("Regime de Titularidade: %s%n", this.regimeTitularidade.name());
+        return "\nConta Ordem\n" + super.toString() + String.format("Regime de Titularidade: %s%n", this.regimeTitularidade.name());
     }
 }

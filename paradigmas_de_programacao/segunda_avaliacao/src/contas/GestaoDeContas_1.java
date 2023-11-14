@@ -7,6 +7,11 @@ public class GestaoDeContas_1 {
         ContaOrdem contaOrdem = new ContaOrdem(UUID.randomUUID().toString(), "Wilson Cossa", 0.0, RegimeTitularidade.INDIVIDUAL);
         ContaPrazo contaPrazo = new ContaPrazo(UUID.randomUUID().toString(), "Igor Tossico", 0.0);
 
+        System.out.print(contaOrdem);
+        System.out.printf("Saldo Real: %.2f%n", contaOrdem.saldoReal(0));
+        System.out.print(contaPrazo);
+        System.out.printf("Saldo Real: %.2f%n", contaPrazo.saldoReal(0));
+
         System.out.println(contaOrdem);
         System.out.println(contaPrazo);
 

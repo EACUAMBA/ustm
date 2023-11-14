@@ -42,7 +42,7 @@ public abstract class Conta implements SaldoReal {
     public abstract void depositar(double valor);
 
     public String toString() {
-        return String.format("Conta%nNúmero: %s%nTitular: %s%nSaldo: %.2f%n", numero, titular, saldo);
+        return String.format("Número: %s%nTitular: %s%nSaldo: %.2f%n", numero, titular, saldo);
     }
 
 
