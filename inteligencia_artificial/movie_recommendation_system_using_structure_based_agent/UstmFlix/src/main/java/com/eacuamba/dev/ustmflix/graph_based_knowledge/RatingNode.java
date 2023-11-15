@@ -1,4 +1,4 @@
-package com.eacuamba.dev.ustmflix.graph;
+package com.eacuamba.dev.ustmflix.graph_based_knowledge;
 
 import lombok.*;
 import lombok.experimental.*;

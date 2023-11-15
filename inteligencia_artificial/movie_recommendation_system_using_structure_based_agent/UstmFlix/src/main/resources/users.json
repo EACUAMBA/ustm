@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Edilson - Xarina - Rizik - Anibal",
+    "preferences": {
+      "genres": [],
+      "directors": [],
+      "actors": [],
+      "ranking": []
+    }
+  },
+  {
+    "id": 2,
+    "name": "Visitante 1",
+    "preferences": {
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Thriller",
+        "Action",
+        "Animation",
+        "Crime",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "directors": [
+        "James Wan",
+        "Jay Oliva"
+      ],
+      "actors": [
+        "Michael Emerson",
+        "Monica Potter",
+        "Shawnee Smith",
+        "Michael Emerson",
+        "Mark Valley",
+        "30434"
+      ],
+      "ranking": [
+        7.7,
+        2013.0
+      ]
+    }
+  }
+]

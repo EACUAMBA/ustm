@@ -8,6 +8,8 @@ import jakarta.servlet.annotation.WebListener;
 public class BeforeAppIsReadyExecute implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+
+        App.setDirectoriesAndCopyFiles();
         App.BuildGraph();
     }
 

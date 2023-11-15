@@ -1,10 +1,10 @@
-package com.eacuamba.dev.ustmflix;
+package com.eacuamba.dev.ustmflix.sevlets;
 
+import com.eacuamba.dev.ustmflix.App;
 import com.eacuamba.dev.ustmflix.dto.Preferences;
 import com.eacuamba.dev.ustmflix.dto.User;
 import com.eacuamba.dev.ustmflix.entities.Movie;
-import com.eacuamba.dev.ustmflix.graph.MovieGraph;
-import com.eacuamba.dev.ustmflix.graph.MovieNode;
+import com.eacuamba.dev.ustmflix.graph_based_knowledge.GraphBasedKnowledge;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -14,41 +14,40 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 @WebServlet("/movie")
-public class UstmFlixMovieView extends HttpServlet {
-    MovieGraph movieGraph = new MovieGraph();
+public class MovieServlet extends HttpServlet {
+    public static final String USTMFLIX = Paths.get("\\").toAbsolutePath().resolve("ustmflix").resolve("users.json").toString();
+    GraphBasedKnowledge graphBasedKnowledge = new GraphBasedKnowledge();
 
     public void init() {
-        this.movieGraph = App.getMovieGraph();
+        this.graphBasedKnowledge = App.getMovieGraph();
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
 
         String userId = request.getParameter("userId");
-        long id = Long.parseLong(userId);
+        long id = Long.parseLong(StringUtils.defaultIfBlank(userId, "1"));
 
         User user = this.getUserById(id);
         Preferences preferences = user.getPreferences();
 
-
         String movieId = request.getParameter("movieId");
 
-        Movie movie = this.movieGraph.getMovieWithIndex(Integer.parseInt(movieId));
+        Movie movie = this.graphBasedKnowledge.getMovieWithIndex(Integer.parseInt(movieId));
 
         if (!movie.getGenreList().isEmpty()) {
             preferences.getGenres().addAll(movie.getGenreList());
         }
+
         preferences.getDirectors().add(movie.getDirectorName());
         preferences.getRanking().add(movie.getImdbScore());
         preferences.getActors().add(movie.getActorOneName());
@@ -56,7 +55,6 @@ public class UstmFlixMovieView extends HttpServlet {
         preferences.getActors().add(movie.getActorThreeName());
 
         this.save(user);
-
 
         request.setAttribute("utilizadorNome", user.getName());
         request.setAttribute("movie", movie);
@@ -70,7 +68,7 @@ public class UstmFlixMovieView extends HttpServlet {
 
     private User getUserById(Long id) {
         Gson gson = new Gson();
-        String jsonPath = "D:\\workspace\\ustm\\inteligencia_artificial\\movie_recommendation_system_using_structure_based_agent\\UstmFlix\\src\\main\\resources\\json_data\\users.json";
+        String jsonPath = USTMFLIX;
         try {
             String readString = Files.readString(Paths.get(jsonPath));
 
@@ -87,7 +85,7 @@ public class UstmFlixMovieView extends HttpServlet {
 
     private void save(User user) {
         Gson gson =  new GsonBuilder().setPrettyPrinting().create();
-        String jsonPath = "D:\\workspace\\ustm\\inteligencia_artificial\\movie_recommendation_system_using_structure_based_agent\\UstmFlix\\src\\main\\resources\\json_data\\users.json";
+        String jsonPath = USTMFLIX;
         try {
             String readString = Files.readString(Paths.get(jsonPath));
 

@@ -1,42 +1,49 @@
 package com.eacuamba.dev.ustmflix;
 
 import com.eacuamba.dev.ustmflix.entities.Movie;
-import com.eacuamba.dev.ustmflix.graph.MovieGraph;
-import com.eacuamba.dev.ustmflix.graph.MovieNode;
+import com.eacuamba.dev.ustmflix.graph_based_knowledge.GraphBasedKnowledge;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Scanner;
 
 /**
  * Hello world!
  */
 public class App {
-    private static final String DATABASE_PATH = "D:\\workspace\\ustm\\inteligencia_artificial\\movie_recommendation_system_using_structure_based_agent\\UstmFlix\\database";
+    private static final String DATABASE_PATH = Paths.get("\\").toAbsolutePath().resolve("ustmflix").resolve("database.db").toString();
+    public static final String USTMFLIX = Paths.get("\\").toAbsolutePath().resolve("ustmflix").resolve("users.json").toString();
     private static Connection connection;
 
-    private static MovieGraph movieGraph;
+    private static GraphBasedKnowledge graphBasedKnowledge;
 
-    public static MovieGraph getMovieGraph() {
-        return movieGraph;
+    public static GraphBasedKnowledge getMovieGraph() {
+        return graphBasedKnowledge;
     }
 
-    public static MovieGraph BuildGraph() {
+    public static GraphBasedKnowledge BuildGraph() {
         System.out.println("Hello World!");
         //fillDatabase();
 
-        MovieGraph movieGraph = new MovieGraph();
+        GraphBasedKnowledge graphBasedKnowledge = new GraphBasedKnowledge();
 
         List<Movie> movieList = retrieveMovieList();
 
         movieList
                 .stream()
-                .limit(2000)
-                .forEach(movieGraph::createNodesForMovie);
+                .forEach(graphBasedKnowledge::createNodesForMovie);
 
         System.out.println("Created graph!");
 
-        return App.movieGraph = movieGraph;
+        return App.graphBasedKnowledge = graphBasedKnowledge;
     }
 
     private static List<Movie> retrieveMovieList() {
@@ -151,5 +158,26 @@ public class App {
         }
 
         return connection;
+    }
+
+    public static void setDirectoriesAndCopyFiles() {
+        try {
+            Path ustmflix = Files.createDirectories(Paths.get("\\").resolve("ustmflix").toAbsolutePath());
+            Path usersPath = ustmflix.resolve("users.json");
+            if (Files.notExists(usersPath)) {
+                InputStream resourceAsStream = App.class.getResourceAsStream("/users.json");
+                Path usersFile = Files.createFile(ustmflix.resolve("users.json"));
+                Files.copy(resourceAsStream, usersFile, StandardCopyOption.REPLACE_EXISTING);
+            }
+
+            Path databasePath = ustmflix.resolve("database.db");
+            if (Files.notExists(databasePath)) {
+                InputStream resourceAsStream2 = App.class.getResourceAsStream("/database.db");
+                Path databaseFile = Files.createFile(databasePath);
+                Files.copy(resourceAsStream2, databaseFile, StandardCopyOption.REPLACE_EXISTING);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
