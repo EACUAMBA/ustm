@@ -1,0 +1,8 @@
+<aspectj>
+    <aspects>
+        <aspect name="com.eacuamba.dev.aspectj_getting_started.AccountAspect"/>
+        <weaver options="-verbose -showWeaveInfo">
+            <include within="com.eacuamba.dev.*"/>
+        </weaver>
+    </aspects>
+</aspectj>
