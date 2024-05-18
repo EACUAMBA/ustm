@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "295100584559",
+    "project_id": "fir-get-started-13a16",
+    "storage_bucket": "fir-get-started-13a16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295100584559:android:536bbe6c4ffca3d1ec339a",
+        "android_client_info": {
+          "package_name": "com.eacuamba.dev.firebase_get_started"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJvjdfw7DP_UWKFwedfLHuaQoOScOCFk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
